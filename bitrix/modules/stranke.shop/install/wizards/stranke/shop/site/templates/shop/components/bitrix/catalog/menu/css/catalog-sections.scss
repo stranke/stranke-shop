@@ -1,0 +1,28 @@
+@import "../../../../../styles/variables";
+
+.catalog-sections {
+  width: 100%;
+  max-width: 1190px;
+
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  @media (max-width: $md) {
+    padding: 0 8px;
+  }
+
+  &__main {
+    margin-top: 20px;
+
+    @media (max-width: 1023px) {
+      margin: 8px 0 20px;
+      display: block;
+    }
+  }
+
+  .bestsellers__title {
+    @media (min-width: 1024px) {
+      margin: 90px 0 60px;
+    }
+  }
+}

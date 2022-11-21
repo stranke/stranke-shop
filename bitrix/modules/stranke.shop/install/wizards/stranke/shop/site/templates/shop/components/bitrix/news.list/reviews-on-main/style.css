@@ -1,0 +1,12 @@
+.reviews-on-main__title {
+  margin: 90px 0 60px;
+  text-align: center; }
+  @media (max-width: 1023px) {
+    .reviews-on-main__title {
+      margin: 40px 0 35px; } }
+
+.reviews-on-main .reviews-on-main__list {
+  margin: 0; }
+  @media (max-width: 1023px) {
+    .reviews-on-main .reviews-on-main__list {
+      margin: -20px 0 0; } }

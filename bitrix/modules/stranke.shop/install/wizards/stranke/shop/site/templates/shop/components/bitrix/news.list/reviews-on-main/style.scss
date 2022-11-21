@@ -1,0 +1,20 @@
+@import "../../../../styles/variables";
+
+.reviews-on-main {
+  &__title {
+    margin: 90px 0 60px;
+    text-align: center;
+
+    @media (max-width: $md) {
+      margin: 40px 0 35px;
+    }
+  }
+
+  .reviews-on-main__list {
+    margin: 0;
+
+    @media (max-width: 1023px) {
+      margin: -20px 0 0;
+    }
+  }
+}

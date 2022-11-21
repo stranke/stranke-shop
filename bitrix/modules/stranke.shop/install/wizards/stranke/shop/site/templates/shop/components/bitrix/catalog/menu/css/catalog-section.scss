@@ -1,0 +1,28 @@
+.catalog-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  &__main {
+    display: none;
+
+    @media (max-width: 1023px) {
+      margin: 8px 0 20px;
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 10px 0 10px;
+
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-transform: none;
+
+    @media (max-width: 1023px) {
+      font-size: 28px;
+      text-align: left;
+    }
+  }
+}

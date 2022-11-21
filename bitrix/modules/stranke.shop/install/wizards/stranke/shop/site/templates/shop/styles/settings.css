@@ -1,0 +1,155 @@
+.admin-settings-btn {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 150px;
+    right: 0;
+
+    padding: 16px 24px;
+
+    background: #FFC700;
+    border-radius: 30px 0px 0px 30px;
+}
+.admin-settings-btn:hover {
+    color: #000;
+    background: #eFb700;
+}
+.admin-settings-btn__image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%; }
+.admin-settings-btn__image .fa-cog {
+    font-size: 40px;
+    line-height: 50px;
+    padding: 0 5px;
+    color: white;
+    transition: all .3s; }
+.admin-settings-btn__image:hover .fa-cog {
+    font-size: 40px;
+    line-height: 50px;
+    padding: 0 5px;
+    color: #e6e6e6; }
+
+.admin-settings {
+    display: block;
+    position: relative; }
+.admin-settings__block {
+    display: block;
+    position: relative;
+    margin: 25px 0 0; }
+.admin-settings__block:first-of-type {
+    margin: 0; }
+.admin-settings__form {
+    display: block;
+    position: relative;
+    max-width: 100%; }
+.admin-settings__form-field {
+    display: block;
+    position: relative;
+    margin: 10px 0; }
+.admin-settings label {
+    display: block;
+    position: relative; }
+.admin-settings__form-checkbox {
+    display: block;
+    position: relative; }
+.admin-settings__form-textarea {
+    display: block;
+    position: relative;
+    min-height: unset; }
+
+.settings input[type="text"],
+.settings input[type="tel"],
+.settings input[type="password"],
+.settings input[type="email"],
+.settings select,
+.settings textarea {
+    border: 1px solid #e6e6e6;
+    border-radius: 2px; }
+.settings__tab {
+    display: block;
+    position: relative;
+    padding: 8px 25px 7px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .4s; }
+
+.settings__tab_active{
+    color: var(--color-main);
+}
+.settings__form {
+    margin: 25px 0 0; }
+.settings__field {
+    position: relative;
+    margin: 0 0 25px;
+    padding: 0 0 25px;
+    border-bottom: 1px solid #eaeaea; }
+.settings__field-title {
+    font-size: 16px;
+    font-weight: 700; }
+.settings__field-control {
+    margin: 10px 0 0; }
+.settings__field-control [type="text"],
+.settings__field-control select{
+    padding: 7px;
+    border-radius: 10px;
+    border-color: #ccc;
+    box-shadow: none;
+}
+.settings__field-control textarea{
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+}
+.settings__tab-content {
+    display: none; }
+.settings__tab-content_active {
+    display: block; }
+.settings__field-control .pickr {
+    display: inline-block; }
+.settings__field-control .pickr .pcr-button:after {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABTAAAAUwBaYa9OQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF2SURBVDiNrdG/T8JAFAfwB8UKA2FgMBqGjkw4OfsPGHcnnZz9M9TBUV1UNhJcjH+AUwcGjDYWcnehpeAAK0nr9frjngs1LEoLftd775Pvy+VghSBirt/vnyqKshsEwV2j0XjNjLTbbYUx9sw5DxARJ5PJ1DTNvcwIpfRJCBHhQgght4U0ACHkXFEUTUq5qWnagaqqSvLm+76I4/htKdLr9U5ms5kbhqF0HEdKKX+aCCFCxlgr1TmdTmdrMBh8SikxDEMcjUYopUTf9wWltImIuVQQY+zedd3AsiwvjmOMoggdx4kppa0syEPyO0IItCyLz5tJQsjj4mz+D+S6VqsdFYvFDQAAVVWhWq3CcDiccs6/AMDK1CSJ67ouIeSi2+1um6Z5vBaydDkJpbT5H8hvTS6zIFee5/FFxPM8Tgi5SY0AAIzH4/e1EV3Xy7ZtG2shAFCoVCr7pVJpx7btj3w+D0KIl3q9fpYVAgAAwzAOdV0vr7Q8zzfjUIvlpgkyxwAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: center; }
+.settings__field-control .pickr_preset .pcr-button:after {
+    background-image: none; }
+.settings__field-img {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; }
+.settings__field-img canvas {
+    display: block;
+    width: 100%;
+    height: auto; }
+.settings__field-img img,
+.settings__field-img .far {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%; }
+.settings__field-img .far {
+    width: 36px;
+    height: 48px;
+    font-size: 48px; }
+.settings__field-file {
+    margin: 0 0 0 15px;
+    display: inline-block;
+    vertical-align: middle; }
+.settings__buttons {
+    display: flex;justify-content: flex-end;}
+.settings__buttons .btn{
+    justify-content: center;
+    width: 210px }

@@ -1,0 +1,375 @@
+/*city_chose*/
+.request-call-form {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1026;
+    transition: all .4s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center
+}
+
+.request-call-form_visible .request-call-form__container {
+    padding-top: 0
+}
+
+.request-call-form:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    margin-left: 0
+}
+
+.request-call-form__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-color: #383838
+}
+
+.request-call-form__container {
+    z-index: 101;
+    opacity: 1;
+    overflow: auto;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: 0;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    max-height: 100%;
+    width: 450px;
+    max-width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin-right: -5px;
+    padding-top: 200px;
+    -webkit-transition: padding-top 0.4s ease;
+    -moz-transition: padding-top 0.4s ease;
+    -o-transition: padding-top 0.4s ease;
+    transition: padding-top 0.4s ease
+}
+
+.js-choisecityForm .request-call-form__container {
+    overflow: visible;
+}
+
+.request-call-form__container .request-call-form__content {
+    display: block;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    -moz-transition: top 0.4s ease;
+    -o-transition: top 0.4s ease;
+    -webkit-transition: top 0.4s ease;
+    transition: top 0.4s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    margin: 0;
+    padding: 40px 40px 45px 40px;
+    width: 450px;
+    max-width: 100%;
+    box-sizing: border-box
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__close-btn {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    color: #95989a;
+    top: 13px;
+    right: 13px
+}
+
+.request-call-form__close-btn_ {
+    position: absolute;
+    padding: 20px 20px;
+    z-index: 111;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    box-sizing: unset;
+}
+
+.request-call-form__close-btn_:before, .request-call-form__close-btn_:after {
+    position: absolute;
+    left: 25px;
+    content: ' ';
+    height: 22px;
+    width: 1px;
+    background-color: #383838
+}
+
+.request-call-form__close-btn_:before {
+    transform: rotate(45deg)
+}
+
+.request-call-form__close-btn_:after {
+    transform: rotate(-45deg)
+}
+
+.request-call-form__close-btn_:hover {
+    cursor: pointer
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__close-btn:hover {
+    cursor: pointer;
+    color: #ff4c4c
+}
+
+.bx-sls .dropdown-block {
+    padding: 0 24px !important;
+    height: 49px;
+    border: 1px solid #DEDEDE !important;
+    border-radius: 8px !important;
+}
+
+.btn.js-choisecity {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px 12px;
+    border-radius: 30px;
+    height: 38px;
+}
+
+.btn.js-choisecity:not(:hover) {
+    background: #c5c5c5;
+}
+
+.set_city_from_list {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__title {
+    display: block;
+    position: relative;
+    padding-bottom: 12px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 115%;
+    color: #2F2F2F;
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__default-text {
+    display: block;
+    position: relative;
+    margin: 8px 0 0 0;
+
+    font-size: 16px;
+    letter-spacing: 0.16px;
+    color: #383838
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block {
+    display: block;
+    position: relative;
+    margin: 18px -11px 0
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    padding: 0 11px 0;
+    box-sizing: border-box;
+
+    font-size: 14px;
+    color: #383838
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title span {
+    color: #ef4545
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title input {
+    margin: 7px 0 0 0;
+    padding: 9px 11px;
+    box-sizing: border-box;
+    width: 100%;
+
+    letter-spacing: 0.16px;
+    font-size: 15px;
+    color: #383838;
+    border: 1px solid #b1cee0;
+    border-radius: 5px
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title input::-webkit-input-placeholder {
+
+    font-size: 15px;
+    color: #95989a
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title input::-moz-placeholder {
+
+    font-size: 15px;
+    color: #95989a
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title input:-moz-placeholder {
+
+    font-size: 15px;
+    color: #95989a
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-title input.error {
+    color: red
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-message {
+    display: block;
+    position: relative;
+    margin: 10px 11px 0
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-message .request-call-form__message {
+
+    font-size: 14px;
+    color: #383838
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-message .request-call-form__message textarea {
+    margin: 7px 0 0 0;
+    padding: 9px 11px;
+    border: 1px solid #b1cee0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: none;
+
+    font-size: 15px
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__input-elements-block .request-call-form__input-message .request-call-form__message textarea.error {
+    color: red
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement {
+    display: block;
+    position: relative;
+    margin: 25px 0 0 0;
+    padding: 0 0 0 25px;
+
+    font-size: 13px
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement .request-call-form__checkbox {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    border: 1px solid #3246FD
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement .request-call-form__checkbox i {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-40%, -55%, 0) scale(0.999);
+    font-size: 9px;
+    color: #3246FD
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement .request-call-form__checkbox_checked i {
+    visibility: visible;
+    opacity: 1
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement .request-call-form__checkbox:hover {
+    cursor: pointer
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement a {
+    color: #aaa;
+    text-decoration: none
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__agreement a:hover {
+    cursor: pointer
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__send-request {
+    width: 157px;
+    display: block;
+    position: relative;
+    margin: 25px auto 0 auto;
+    padding: 16px 0;
+    z-index: 200;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 30px;
+    line-height: 120%;
+    font-weight: 700;
+}
+
+.dropdown-icon, .bx-ui-sls-clear {
+    display: none !important;
+}
+
+.bx-sls .bx-ui-sls-fake, .bx-sls .bx-ui-sls-route {
+    height: 49px !important;
+    font-family: 'Geometria' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px !important;
+    line-height: 120%;
+}
+
+.bx-sls .bx-ui-sls-container {
+    min-height: 49px !important;
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__send-request_unlocked {
+    pointer-events: auto
+}
+
+.request-call-form__container .request-call-form__content .request-call-form__send-request_unlocked:hover {
+    cursor: pointer;
+}
+
+.request-call-form_visible {
+    visibility: visible;
+    opacity: 1;
+    transition: all .4s
+}
+
+.ChangeCityForm .bx-sls .bx-ui-sls-pane {
+    top: calc(100% + 2px) !important;
+    bottom: auto !important;
+    box-shadow: none;
+    padding: 0;
+}
+
+.ChangeCityForm .bx-sls .bx-ui-sls-error div {
+    top: 3px;
+}
+
+/*city_chose*/
+

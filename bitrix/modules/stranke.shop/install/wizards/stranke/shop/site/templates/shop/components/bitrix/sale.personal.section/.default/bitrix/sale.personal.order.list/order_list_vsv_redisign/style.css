@@ -1,0 +1,171 @@
+.orders_table{
+    border-collapse: separate;
+    width: 100%;
+      border-spacing: 0px;
+    // border-spacing: 0px 15px;
+}
+.orders_table:hover{
+    background: #f5f5f5;
+}
+.orders_table td{
+    padding: 5px 10px;
+    font-size: 14px;
+    vertical-align: top;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 400;
+    color: #444444;
+   // border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    border-right:1px solid #e3e3e3;
+
+}
+.orders_table thead td{
+    background: #d2d2d2;
+    font-size: 14px;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 500;
+    color: #000;
+    padding: 13px 0;
+    text-align: center;
+}
+.orders_table td:first-child{
+    border-left: 1px solid #e3e3e3;
+}
+.orders_table td:last-child{
+    border-right: 1px solid #e3e3e3;
+}
+
+.orders_table .gray_row td{
+    background: #f4f4f4;
+    color: #adadad;
+}
+
+.orders_table .order_items{
+    width: 360px;
+}
+.orders_table .order_items td{
+    border: none;
+    padding: 2px 5px;
+    line-height: 1;
+}
+.orders_table .order_items a{
+    color: #4c4c4c;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 400;
+    font-size: 14px;
+    padding: 2px 0;
+    display: inline-block;
+}
+.orders_table .pay_system {
+    //  width: 150px;
+    text-align: center;
+    color: #4c4c4c;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 500;
+    font-size: 14px;
+}
+.orders_table .pay_system div{
+    margin: 3px 0;
+    color: #444;
+}
+.orders_table .pay_system .wrapper_btn{
+    margin-top: 4px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0px;
+    
+}
+.orders_table .pay_system .wrapper_btn .pay_btn{
+    display: inline-block;
+      margin: 3px 5px;
+
+}
+
+.orders_table .pay_system .wrapper_btn .pay_btn input[type="submit"]{
+    display: inline-block;
+    text-decoration: none;
+    background: #ff4c4c;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+.orders_table .pay_system .wrapper_btn .pay_btn input[type="submit"]:hover{
+    background: #ff6060;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.orders_table .pay_system .remove_order{
+      margin-bottom: 10px;
+}
+.orders_table .pay_system .violet_text{
+    color: #00b2e2;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: underline;  
+}
+.orders_table .pay_system .violet_text:hover{
+    text-decoration: none; 
+}
+.orders_table .controls {
+    text-align: right;
+    width: 200px;
+    font-weight: 200;
+}
+.orders_table .controls a{
+    font-size: 14px;
+}
+.orders_table .price_block{
+    display: inline-block;
+    color: #ff4c4c;
+    margin: 0px 0 4px 0;
+    float: right;
+}
+.orders_table .price_block span{
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 600;
+    font-size: 14px;
+    color: #4c4c4c;
+}
+.orders_table .number_table{
+    width: 44px;
+}
+.orders_table .data_table{
+     width: 104px;
+}
+.structure_table .orders_table{
+   width: 315px;  
+}
+.orders_table .comment_table{
+   width: 313px;  
+}
+.orders_table .status_table{
+     width: 368px;
+}
+.orders_table .pay_syst{
+      padding: 3px 7px 0;
+}
+.orders_table #pay_btn.vsevset_button_complex .vsevset_button_wrap a.vsevset_button_item{
+      font-family: 'HelveticaNeueCyr';
+  font-weight: 400;
+    font-size: 13px;
+      padding: 3px 14px;
+}

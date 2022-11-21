@@ -1,0 +1,166 @@
+a {
+    color: #e5353d;
+    color: var(--color-main);
+}
+
+a:hover {
+    color: #e21e27;
+    color: var(--color-main);
+}
+
+/* color */
+.settings__tab,
+.header__phone a:hover,
+.lk-profile__del-photo-btn,
+.lk-menu__item,
+.form-block__field-checkbox span i,
+#basket-root .basket-btn-checkout,
+.bx-breadcrumb .bx-breadcrumb-item a:hover,
+.page404__title,
+.page404__link,
+.page404__link:hover,
+.drawer-navigation__personal .menu__item:hover .menu__item-title,
+.drawer-navigation__personal .menu__item_active .menu__item-title {
+    color: #e5353d;
+    color: var(--color-main);
+}
+
+.settings__tab_active,
+.product__nav-bar-element_active,
+.btn_primary,
+.alert-banner__text,
+.lk-profile__submit,
+.lk-menu__item_active,
+.form-block__enter-btn,
+#basket-root .basket-checkout-section .btn.btn-default:hover,
+.bottom-navigation__basket-num,
+.btn-default,
+.btn-default:hover,
+.sale-paysystem-yandex-button-item,
+.sale-paysystem-yandex-button-item:hover,
+#basket-root .basket-btn-checkout,
+.lk-menu__item:hover,
+.product__buy-btn_offers_none:hover,
+.products__item-btn_active,
+.products__item-btn_offers_none:hover {
+     color: #ffffff;
+ }
+
+
+/* border-color */
+.settings__tab,
+.product__nav-bar-element_active,
+.product__nav-bar-element,
+.lk-profile__add-photo-form,
+.lk-profile__add-photo-btn,
+.lk-menu__item,
+.form-block__field-checkbox span,
+.form-block__field-radio span,
+#basket-root .basket-btn-checkout,
+#basket-root .basket-checkout-section .btn.btn-default:hover,
+#basket-root .basket-checkout-section .btn.btn-default:active,
+#basket-root .basket-checkout-section .btn.btn-default:focus,
+.bx-soa-pp__item-input:checked ~ .bx-soa-pp__item-checkbox span,
+.bx-soa-pp__item_selected .bx-soa-pp__item-checkbox span,
+.btn-default,
+.btn-default:hover,
+.sale-paysystem-wrapper,
+blockquote,
+.lk-menu__item:hover,
+.sale-order-detail-general,
+.sale-order-detail-about-order-inner-container-name-read-less,
+.sale-order-detail-about-order-inner-container-name-read-more,
+.sale-order-list-cancel-payment,
+.sale-order-detail-show-link,
+.sale-order-detail-hide-link,
+.sale-order-detail-payment-options-methods-info-change-link {
+    border-color: #e5353d;
+    border-color: var(--color-main);
+}
+
+/* background */
+.settings__tab_active,
+.header__top-menu-bottom-row,
+.admin-settings-btn,
+.user-order__btn,
+.user-order__btn:hover,
+.btn_primary,
+.products__item-offer-icon:after,
+.product__nav-bar-element_active,
+.product__nav-bar-element:hover,
+.product__nav-bar-element:focus,
+.reviews-form__send-btn,
+.lk-profile__submit,
+.lk-profile__subscription-field span,
+.lk-profile__add-photo-btn:before,
+.lk-profile__add-photo-btn:after,
+.lk-menu__item_active,
+.form-block__enter-btn,
+.form-block__field-radio span:after,
+#basket-root .basket-checkout-section .btn.btn-default:hover,
+#basket-root .basket-checkout-section .btn.btn-default:active,
+#basket-root .basket-checkout-section .btn.btn-default:focus,
+.bottom-navigation__basket-num,
+.bx-soa-pp__item-checkbox span:after,
+.btn-default,
+.btn-default:hover,
+.sale-paysystem-yandex-button-item,
+.sale-paysystem-yandex-button-item:hover,
+.sale-paysystem-yandex-button-item:focus,
+.sale-paysystem-yandex-button-item:active,
+.nicescroll-cursors,
+.lk-menu__item:hover,
+.sale-order-detail-general-head,
+.drawer-navigation__personal .menu__item:hover .menu__item-title:before,
+.drawer-navigation__personal .menu__item_active .menu__item-title:before,
+.product input:checked ~ .product__offer-radio-row .product__offer-radio-icon:after,
+.bx-pagination .bx-pagination-container ul li.bx-active span {
+    background: #e5353d;
+    background: var(--color-main);
+}
+
+.product__buy-btn_active,
+.product__buy-btn_offers_none:hover,
+.products__item-btn_active,
+.products__item-btn_offers_none:hover {
+    background-color: #e5353d;
+    background-color: var(--color-main);
+}
+
+.header__top-menu-top-row {
+    background: #333333;
+    background: var(--color-top-menu);
+}
+
+.user-order__btn_empty-order {
+     background-color: #e5eef3;
+     color: #78909c;
+ }
+
+.bottom-navigation__item svg {
+    fill: #a6a6a6;
+}
+
+.bottom-navigation__item_active svg,
+.bottom-navigation__item_open svg {
+    fill: #e5353d;
+    fill: var(--color-main);
+}
+
+.bottom-navigation__item svg .stroke {
+    stroke: #a6a6a6;
+}
+.bottom-navigation__item_active svg .stroke,
+.bottom-navigation__item_open svg .stroke {
+    stroke: #e5353d;
+    stroke: var(--color-main);
+}
+
+.product__buy-btn_added,
+.product__buy-btn_added:hover,
+.products__item-btn_added,
+.products__item-btn_added:hover {
+    color: #fff;
+    background-color: #97D058;
+    border-color: #97D058;
+}

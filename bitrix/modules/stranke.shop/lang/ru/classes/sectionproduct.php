@@ -1,0 +1,2 @@
+<?php
+$MESS['ST_SECTION_PRODUCT_WEIGHT'] = ' гр.';

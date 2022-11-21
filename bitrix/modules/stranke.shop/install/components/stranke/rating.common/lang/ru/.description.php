@@ -1,0 +1,4 @@
+<?
+$MESS ['STRANKE_CONTACTS_COMPONENT_NAME'] = "Рейтинг";
+$MESS ['STRANKE_CONTACTS_COMPONENT_DESCRIPTION'] = "Компонент рейтинг";
+?>

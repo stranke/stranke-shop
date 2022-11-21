@@ -1,0 +1,9 @@
+<?php
+$MESS['ST_REVIEWS_MAIN_TITLE'] = 'Отзывы';
+$MESS['ST_REVIEWS_MAIN_COMMON_RATING'] = 'Общий рейтинг';
+
+$MESS['ST_REVIEWS_MAIN_REVIEW_1'] = 'отзыв';
+$MESS['ST_REVIEWS_MAIN_REVIEW_2'] = 'отзыва';
+$MESS['ST_REVIEWS_MAIN_REVIEW_3'] = 'отзывов';
+
+$MESS['ST_REVIEWS_MAIN_ADMINISTRATION'] = 'Администрация';

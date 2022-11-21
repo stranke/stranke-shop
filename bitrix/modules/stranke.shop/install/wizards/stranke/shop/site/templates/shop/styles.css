@@ -1,0 +1,10 @@
+blockquote {
+    position: relative;
+    margin: 15px 0;
+    padding: 1em;
+    box-sizing: border-box;
+
+    border-left-width: 0.2em;
+    border-left-style: solid;
+    font-weight: 100;
+}

@@ -1,0 +1,40 @@
+.bx-breadcrumb {
+    padding: 10px 0;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bx-breadcrumb i {
+    display: none;
+}
+
+.bx-breadcrumb .bx-breadcrumb-item {
+    background: #F2F3F3;
+    border-radius: 30px;
+    padding: 10px 20px;
+
+    font-size: 12px;
+    line-height: 15px;
+    color: inherit;
+}
+
+.bx-breadcrumb a.bx-breadcrumb-item:hover {
+    background: #e2e3e3;
+}
+
+.bx-breadcrumb div.bx-breadcrumb-item {
+    color: #BABCBE;
+}
+
+.bx-breadcrumb .bx-breadcrumb-item a {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+@media (max-width: 1023px) {
+    .bx-breadcrumb {
+        display: none;
+    }
+}

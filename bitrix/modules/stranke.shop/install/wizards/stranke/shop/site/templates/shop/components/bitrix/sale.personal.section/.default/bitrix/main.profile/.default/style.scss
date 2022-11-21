@@ -1,0 +1,70 @@
+$mainColorRed: #e5353d;
+$mainColorButtonRed: #e5353d;
+
+$mainColorBlue: #358ac2;
+$mainColorButtonRed: #e5353d;
+$mainColorButtonRedDarken: darken($mainColorRed, 5%);
+$mainColorTextDefault: #383838;
+$mainColorBorderGray: #b5b5b5;
+$mainColorWhite: #ffffff;
+$mainColorBorder: #dbdbdb;
+$mainColorGreen: #77b97e;
+
+
+
+$fontPTSans: 'PTSansRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontOpenSans: 'OpenSansRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+.bx_profile .main-profile-block-date-info{
+	margin-bottom: 15px;
+}
+
+.bx_profile .main-profile-form-password-annotation{
+	font-family: Arial, Helvetica,sans-serif;
+	color: grey;
+	font-weight: lighter;
+	font-size: 12px;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+.bx_profile .main-profile-block-date-info, .bx_profile .form-group{
+	overflow-y: hidden;
+}
+
+
+
+.red{
+	color: $mainColorButtonRed;
+}
+
+
+
+@media (min-width: 992px)
+{
+	.text-md-right{
+		text-align: right;
+	}
+
+	.form-group{
+		display: table;
+		width: 100%;
+	}
+
+	.main-profile-form-label.text-md-right, input[class*="col-"] {
+		float: none !important;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.bx_profile .main-profile-social-block{
+	margin-top: 40px;
+}
+
+.bx_profile .form-group .form-control{
+	height: 40px;
+}
+
+
+

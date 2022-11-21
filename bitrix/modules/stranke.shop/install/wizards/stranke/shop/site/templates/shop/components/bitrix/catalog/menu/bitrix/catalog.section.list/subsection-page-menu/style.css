@@ -1,0 +1,22 @@
+.catalog-section-menu__section-list {
+
+    padding: 10px 0;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.catalog-section-menu__section-list .catalog-section-menu__section {
+    border-radius: 30px;
+    padding: 10px 20px;
+
+    font-size: 12px;
+    line-height: 15px;
+    color: #5F5F5F;
+    background: #F2F3F3;
+}
+
+.catalog-section-menu__section-list .catalog-section-menu__section.catalog-section-menu__section_selected,
+.catalog-section-menu__section-list .catalog-section-menu__section:hover {
+    background: #e2e3e3;
+}
