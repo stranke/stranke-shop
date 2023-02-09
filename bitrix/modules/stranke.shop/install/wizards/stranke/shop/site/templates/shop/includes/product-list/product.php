@@ -42,7 +42,7 @@ if ($arfile) {
     <? require 'product_shilds.php' ?>
     <canvas width="175" height="150"></canvas>
     <? if ($arfile): ?>
-        <img class="lazy"
+    <img class="lazy"
              src="<?= $fileMin['src'] ?>"
              data-src="<? echo $file['src'] ?>"
              data-href="<?= $arItem['DETAIL_PAGE_URL'] ?>"

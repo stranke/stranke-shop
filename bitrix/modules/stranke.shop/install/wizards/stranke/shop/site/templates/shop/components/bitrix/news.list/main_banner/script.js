@@ -13,8 +13,8 @@ $(window).on("load", function () {
             spaceBetween: 0,
             // Navigation arrows
             navigation: {
-                nextEl: '#slider-on-main .swiper-button-next',
-                prevEl: '#slider-on-main .swiper-button-prev'
+                nextEl: '#main_banner .swiper-button-next',
+                prevEl: '#main_banner .swiper-button-prev'
             },
             pagination: {
                 el: '#slider-on-main .swiper-pagination',

@@ -22,6 +22,20 @@
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/menu.sections" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/search.title" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/templates/.default/tabs/auth.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/templates/.default/tabs/lang/ru/contacts.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/templates/.default/tabs/lang/ru/pagetovar.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/appgallery.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/apstore.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/fb.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/gp.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/inst.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/tg.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/viber.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/vk.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/whatsapp.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/img/yt.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/lang/ru/field_file.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/components/stranke/settings/views/lang/ru/field_string.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/index.php" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/version.php" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards" charset="windows-1251" />
@@ -35,16 +49,23 @@
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/ajax/choise_city_load.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/ajax/choise_city_set.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/ajax/company_callback.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/ajax/forms/lang/ru/action_form.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/ajax/header_mobile_menu.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/include/modal-auth.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/include/product_delivery.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/public/ru/include/product_spec.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/applications/applications.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/catalog/catalog.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/catalog/offers.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/setting/setting_files" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/slider/slider.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/services/iblock/xml/ru/slider/slider_files" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/breadcrumb/.default/style.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog.section/.default/js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog.section/element_recomend-products/js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog.section/element_related-products/js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog.smart.filter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/bitrix/catalog.element/shop/include/lang/ru/price_block.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/bitrix/catalog.element/shop/include/price_block.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/bitrix/catalog.element/shop/include/product__info.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/bitrix/catalog.element/shop/product_photo.php" charset="UTF-8" />
@@ -53,6 +74,7 @@
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/section.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/catalog/menu/section_sort.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/main.include" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/main.userconsent.request/sogl_auth/lang/ru/template.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/menu/main_menu_mobile" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/news.detail/text-page-on-main/lang/ru/template.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/components/bitrix/news.list/main_banner" charset="UTF-8" />
@@ -67,6 +89,7 @@
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/includes/header/header_phone.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/includes/product-list/include/price_block.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/includes/product-list/include/product__info.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/includes/product-list/include/product__info_recom.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/includes/product-list/product_shilds.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/js/input_phone.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/install/wizards/stranke/shop/site/templates/shop/js/jquery.lazy.min.js" charset="UTF-8" />
@@ -78,5 +101,8 @@
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/lib" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/lib/phpQuery" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitrix/modules/stranke.shop/lib/phpQuery.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/update/1.1.0/description.ru" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/update/1.1.0/install/index.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/update/1.1.0/lang/ru/updater1.1.0.php" charset="UTF-8" />
   </component>
 </project>

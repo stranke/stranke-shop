@@ -114,7 +114,8 @@
 
 .banner-on-main__form-field {
     position: relative;
-    margin: 15px 0 0;
+    margin: 15px 0 15px 0;
+
 }
 
 .banner-on-main__form-field-label {

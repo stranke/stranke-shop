@@ -94,7 +94,7 @@ class Auth
 //            return $app->response->setBody(json_encode($response));
         }
 
-        $arUser = self::getUser($phone_mask);
+        $arUser = self::getUser($phone);
         if (!$arUser['ID']) {
             /* $response = [
                  'meta' => [

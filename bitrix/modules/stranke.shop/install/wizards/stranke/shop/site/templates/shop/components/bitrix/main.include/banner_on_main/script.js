@@ -14,7 +14,7 @@ function get_code_static() {
 
     var data = {phone: phone};
     var data1 = {method: method};
-
+    if($('input[value="Y"]').prop('checked')){
     $.ajax({
         type: "post",
         url: SITE_DIR + 'ajax/auth/index.php',
@@ -22,7 +22,7 @@ function get_code_static() {
             'phone': phone,
             'method': method,
         },
-        /*JSON.stringify(data,data1),*/
+
         dataType: "json",
         success: function (answer) {
 
@@ -44,7 +44,7 @@ function get_code_static() {
                 })
             }
         }
-    })
+    })}
     return false
 }
 
@@ -84,6 +84,7 @@ function check_code_static() {
                     'display': 'block'
                 })
             } else {
+                var target_ym_authp =  target_ym_auth()
                 window.location.reload()
             }
         }

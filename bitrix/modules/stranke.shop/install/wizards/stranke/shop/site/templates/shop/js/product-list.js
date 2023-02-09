@@ -72,7 +72,6 @@ function init_product_offers(product_id, offers = false) {
         if (offer.MIN_PRICE.DISCOUNT_DIFF) {
             $product_div.find('[role="price"]').prepend('<span role="price_old" class="product__price-old">' + offer.MIN_PRICE.PRINT_VALUE + '</span>')
         }
-
         if (offer.CATALOG_QUANTITY <= 0) {
             $product_div.find('[role="quantity_info"]').html('<span class="unavailable">' + BX.message('CT_BCE_CATALOG_NO_AVAILABLE') + '</span>')
             $product_div.find('[role="buy_btn"]').removeClass('product__buy-btn_added').html(BX.message('CT_BCE_CATALOG_NO_AVAILABLE')).addClass('product__buy-btn_not-available')

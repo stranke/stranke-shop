@@ -69,7 +69,8 @@ if (!function_exists('showIcons')) {
     <meta name="theme-color" content="#333333">
 
     <title><? $APPLICATION->ShowTitle() ?></title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap&subset=cyrillic"
+          rel="stylesheet">
     <? /*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">*/ ?>
     <?
     showIcons();
@@ -92,13 +93,19 @@ if (!function_exists('showIcons')) {
 <body class="page" itemscope="" itemtype="http://schema.org/WebPage">
 <? $APPLICATION->ShowPanel() ?>
 <header id="header" class="header">
+    <? if(strpos($app->config->otherCode, 'script') == true) {
+        echo $app->config->otherCode;
+    }?>
     <div class="wrapper header_wrapper">
         <div class="header-mobile__left-block">
             <div class="header-mobile__menu-btn js-headerMobileMenuBtn">
                 <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="1.5" y1="1.5" x2="18.5" y2="1.5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="1.5" y1="8.5" x2="18.5" y2="8.5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="1.5" y1="15.5" x2="18.5" y2="15.5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="1.5" y1="1.5" x2="18.5" y2="1.5" stroke="black" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                    <line x1="1.5" y1="8.5" x2="18.5" y2="8.5" stroke="black" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                    <line x1="1.5" y1="15.5" x2="18.5" y2="15.5" stroke="black" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round"/>
                 </svg>
             </div>
         </div>
@@ -145,12 +152,16 @@ if (!function_exists('showIcons')) {
                 <div class="header-bottom-menu__header-catalog">
                     <div class="header-catalog">
                         <div class="header-catalog__btn bg_main btn js-headerCatalogMenuBtn">
-                            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="white"/>
+                            <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="white"/>
                             </svg>
                             <span><?= GetMessage('ST_CATALOG_BTN') ?></span>
                             <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 0L3.538 2.712L0.825 0L0 0.825L3.538 4.363L7.076 0.825L6.25 0Z" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M6.25 0L3.538 2.712L0.825 0L0 0.825L3.538 4.363L7.076 0.825L6.25 0Z"
+                                      fill="white"/>
                             </svg>
                         </div>
                     </div>
@@ -207,7 +218,8 @@ if (!function_exists('showIcons')) {
 
         <div class="header-mobile-menu">
             <div class="header-mobile-menu__close-btn js-headerCatalogMenuCloseBtn"></div>
-            <div class="header-mobile-menu__submenu-container header-mobile-menu__submenu-container_main" data-name="mobile-main-menu">
+            <div class="header-mobile-menu__submenu-container header-mobile-menu__submenu-container_main"
+                 data-name="mobile-main-menu">
                 <div class="js-headerMobileMenuContent header-mobile-container"></div>
             </div>
         </div>

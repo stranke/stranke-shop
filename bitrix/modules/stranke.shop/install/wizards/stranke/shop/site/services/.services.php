@@ -33,6 +33,7 @@ $arServices = Array(
             "reviews.php",
             "slider.php",
             "setting.php",
+			"applications.php",
 		),
 	),
 	"sale" => Array(

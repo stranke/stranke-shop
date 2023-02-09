@@ -37,6 +37,12 @@ class Config
     public $textFooterOriginal = '';
     public $logo = '';
 
+    public $color_action_background = '';
+    public $color_action_text = '';
+    public $action_text = '';
+    public $action_text_on = '';
+    public $stock_balance = '';
+
     public $gtm = '';
     public $ym = '';
     public $otherCode = '';
@@ -65,6 +71,14 @@ class Config
     public $colorDiscountShield = '#4f55fd';
     public $colorShildNew = '#2659e2';
     public $colorShildHit = '#b127e2';
+
+    public $bannertitlefontsize = '14';
+    public $bannersubtitlefontsize = '14';
+
+    public $targetaddtobasket;
+    public $targetsuccessorder;
+    public $targetauth;
+    public $YMONCHANGEFORMPRIZ;
 
     public $targets = [];
 
@@ -120,9 +134,24 @@ class Config
         $this->google_play_link = $this->properties["GOOGLE_PLAY_LINK"]["VALUE"];
         $this->app_gallery_link = $this->properties["APP_GALLERY_LINK"]["VALUE"];
 
+        $this->color_action_background = $this->properties["COLOR_BACKGROUND_ACTION"]["VALUE"];
+        $this->color_action_text = $this->properties["COLOR_TEXT_ACTION"]["VALUE"];
+        $this->action_text = $this->properties["TEXT_ACTION"]["VALUE"];
+        $this->action_text_on = $this->properties["BLOCK_PRIZ_TOVAR_ON"]["VALUE"];
+        $this->stock_balance = $this->properties["STOCK_BALANCE"]["VALUE"];
+
+        $this->bannertitlefontsize = $this->properties["BANNER_TITLE_FONT_SIZE"]["VALUE"];
+        $this->bannersubtitlefontsize = $this->properties["BANNER_SUBTITLE_FONT_SIZE"]["VALUE"];
+
+        $this->targetaddtobasket = $this->properties["TARGET_ADD_TO_BASKET"]["VALUE"];
+        $this->targetsuccessorder = $this->properties["TARGET_SUCCESS_ORDER"]["VALUE"];
+        $this->targetauth = $this->properties["TARGET_AUTH"]["VALUE"];
+        $this->YMONCHANGEFORMPRIZ = $this->properties["YM_ONCHANGE_FORM_PRIZ"]["VALUE"];
+
         if (!empty($this->properties["BASKET_TERMS"]["VALUE"])) {
             $this->basketTerms = $this->properties["BASKET_TERMS"]["VALUE"]['TEXT'];
         }
+
 
         if (!empty($this->properties["LOGO"]["VALUE"])) {
             $logoFileId = $this->properties["LOGO"]["VALUE"];

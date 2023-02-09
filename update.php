@@ -1,4 +1,4 @@
-<?php require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php"); ?>
+<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php"); ?>
 <?
 
 use Stranke\CRM\CRMMain;
@@ -97,7 +97,7 @@ use Stranke\CRM\CRMClient;
             'IBLOCK_CODE' => SITE_ID . '_lid'
         );
         $one_iteration = 30;
-        $res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
+        $res = CIBlockElement::GetList(array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
         if ($res->PAGEN == $res->NavPageNomer) {
             ?>
             UPDATE_STORE: Step <? echo $res->NavPageNomer ?> of <? echo $res->NavPageCount ?><br>
@@ -188,7 +188,7 @@ use Stranke\CRM\CRMClient;
             'IBLOCK_CODE' => SITE_ID . '_lid'
         );
         $one_iteration = 30;
-        $res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
+        $res = CIBlockElement::GetList(array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
         if ($res->PAGEN == $res->NavPageNomer) {
             ?>
             UPDATE_STORE: Step <? echo $res->NavPageNomer ?> of <? echo $res->NavPageCount ?><br>
@@ -266,7 +266,7 @@ use Stranke\CRM\CRMClient;
 //            'ID' => 37724
         );
         $one_iteration = 30;
-        $res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
+        $res = CIBlockElement::GetList(array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
         if ($res->PAGEN == $res->NavPageNomer) {
             ?>
             UPDATE_STORE: Step <? echo $res->NavPageNomer ?> of <? echo $res->NavPageCount ?><br>
@@ -346,6 +346,451 @@ use Stranke\CRM\CRMClient;
     }
     die();*/
     /* for debug only */
+
+//удаление свойства TIME  время приготовления
+    $res = CIBlockProperty::GetByID("TIME", false, "catalog_products_" . SITE_ID);
+    if ($ar_res = $res->GetNext()) {
+        $deletetime = CIBlockProperty::Delete($ar_res['ID']);
+    }
+//
+    //добавление свойства длоп фото для ТП
+    $res = CIBlock::GetList(
+        array(),
+        array(
+            'SITE_ID' => SITE_ID,
+            'ACTIVE' => 'Y',
+            "CODE" => "catalog_offers_" . SITE_ID
+        ), false
+    );
+    while ($ar_res = $res->Fetch()) {
+        $tpid = $ar_res['ID'];
+    }
+
+    $res = CIBlockProperty::GetByID("TP_DOP_PHOTO", false, "catalog_offers_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Дополнительные фото",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "TP_DOP_PHOTO",
+            "MULTIPLE" => "Y",
+            "PROPERTY_TYPE" => "F",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //добавление свойства аксесуаров для ТП
+
+
+    $res = CIBlockProperty::GetByID("TP_ACCESSORIES", false, "catalog_offers_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Аксесуары",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "TP_ACCESSORIES",
+            "MULTIPLE" => "Y",
+            "PROPERTY_TYPE" => "E",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+
+    //добавление свойства телеграмм
+    $res = CIBlock::GetList(
+        array(),
+        array(
+            'SITE_ID' => SITE_ID,
+            'ACTIVE' => 'Y',
+            "CODE" => "services_settings_" . SITE_ID
+        ), false
+    );
+    while ($ar_res = $res->Fetch()) {
+        $tpid = $ar_res['ID'];
+    }
+
+    $res = CIBlockProperty::GetByID("SOCIAL_TELEGRAM", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Telegram",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "SOCIAL_TELEGRAM",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+    //переименование соц сетей
+    $socialnames = array('Facebook' => 'SOCIAL_WEBS_FB',
+        'Instagram' => 'SOCIAL_WEBS_INSTA',
+        'Vkontakte' => 'SOCIAL_WEBS_VK',
+        'AppStore' => 'APP_STORE_LINK',
+        'Google Play' => 'GOOGLE_PLAY_LINK',
+        'AppGallery' => 'APP_GALLERY_LINK');
+    foreach ($socialnames as $keys => $socialnamesitem) {
+        $res = CIBlockProperty::GetByID("$socialnamesitem", false, "services_settings_" . SITE_ID);
+        $ar_res = $res->GetNext();
+        if ($ar_res['NAME'] != $keys) {
+            $fields = CIBlock::getFields($tpid);
+            $arFields = array(
+                "NAME" => $keys,
+            );
+            $ibp = new CIBlockProperty;
+            if (!$ibp->Update($ar_res['ID'], $arFields))
+                echo $ibp->LAST_ERROR;
+        }
+    }
+
+    //
+
+    //блок призыва создание свойства
+
+
+    $res = CIBlockProperty::GetByID("BLOCK_PRIZ_TOVAR_ON", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Блок призыва на странице товара",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "BLOCK_PRIZ_TOVAR_ON",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "L",
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 30,
+            'LIST_TYPE' => 'C',
+            'MULTIPLE_CNT' => 5,
+            "IBLOCK_ID" => $tpid
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //цвет подложки свойство
+
+
+    $res = CIBlockProperty::GetByID("COLOR_BACKGROUND_ACTION", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Цвет подложки",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "COLOR_BACKGROUND_ACTION",
+            "MULTIPLE" => "N",
+            'COL_COUNT' => 30,
+            'LIST_TYPE' => 'L',
+            "PROPERTY_TYPE" => "S",
+            'USER_TYPE' => 'STRANKE_COLOR',
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //добавление свойства цвет текста
+
+
+    $res = CIBlockProperty::GetByID("COLOR_TEXT_ACTION", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Цвет текста",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "COLOR_TEXT_ACTION",
+            "MULTIPLE" => "N",
+            'COL_COUNT' => 30,
+            'LIST_TYPE' => 'L',
+            "PROPERTY_TYPE" => "S",
+            'USER_TYPE' => 'STRANKE_COLOR',
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //добавление свойства текст
+
+
+    $res = CIBlockProperty::GetByID("TEXT_ACTION", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Текст",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "TEXT_ACTION",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //добавление свойства Идентификатор цели 'Успешная авторизация'
+
+
+    $res = CIBlockProperty::GetByID("TARGET_AUTH", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Идентификатор цели 'Успешная авторизация'",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "TARGET_AUTH",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+    //добавление свойства остаток на складе
+
+
+    $res = CIBlockProperty::GetByID("STOCK_BALANCE", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Остаток на складе",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "STOCK_BALANCE",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "L",
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 30,
+            'LIST_TYPE' => 'C',
+            'MULTIPLE_CNT' => 5,
+            "IBLOCK_ID" => $tpid
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+
+//добавление свойства размер текста для баннера заголовок
+    $res = CIBlockProperty::GetByID("BANNER_TITLE_FONT_SIZE", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Размер текста для заголовка слайдера (px)",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "BANNER_TITLE_FONT_SIZE",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+//добавление свойства размер текста для баннера подзаголовок
+    $res = CIBlockProperty::GetByID("BANNER_SUBTITLE_FONT_SIZE", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Размер текста для подзаголовка слайдера (px)",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "BANNER_SUBTITLE_FONT_SIZE",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+
+
+//изменение урл у текстовых страниц
+    $res = CIBlock::GetList(
+        array(),
+        array(
+            'SITE_ID' => SITE_ID,
+            'ACTIVE' => 'Y',
+            "CODE" => "content_pages_" . SITE_ID
+        ), true
+    );
+    while ($ar_res = $res->Fetch()) {
+        $idtextstr = $ar_res['ID'];
+    }
+
+
+    $ib = new CIBlock;
+    $arFields = array(
+        "LIST_PAGE_URL" => '',
+        "DETAIL_PAGE_URL" => '#SITE_DIR#/#ELEMENT_CODE#/',
+        'SECTION_PAGE_URL' => '',
+    );
+    $res = $ib->Update($idtextstr, $arFields);
+    //
+
+
+    //добавление Идентификатор цели 'Отправка форма призыва'
+    $res = CIBlock::GetList(
+        array(),
+        array(
+            'SITE_ID' => SITE_ID,
+            'ACTIVE' => 'Y',
+            "CODE" => "services_settings_" . SITE_ID
+        ), false
+    );
+    while ($ar_res = $res->Fetch()) {
+        $tpid = $ar_res['ID'];
+    }
+
+    $res = CIBlockProperty::GetByID("YM_ONCHANGE_FORM_PRIZ", false, "services_settings_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Идентификатор цели 'Отправка форма призыва'",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "YM_ONCHANGE_FORM_PRIZ",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpid
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+//создание инфоблока заявки в служебном типе
+    $res = CIBlock::GetList(
+        array(),
+        array(
+            'SITE_ID' => SITE_ID,
+            'ACTIVE' => 'Y',
+            "CODE" => "services_applications_" . SITE_ID
+        ), false
+    );
+    while ($ar_res = $res->Fetch()) {
+        $tpida = $ar_res['ID'];
+    }
+    if (!$tpida) {
+        $ib = new CIBlock;
+        $arFields = array(
+            "ACTIVE" => 'Y',
+            "NAME" => 'Заявки',
+            "CODE" => "services_applications_" . SITE_ID,
+            "IBLOCK_TYPE_ID" => 'services',
+            "SITE_ID" => SITE_ID,
+            "SORT" => "500",
+            "GROUP_ID" => array("2" => "D", "3" => "R")
+        );
+        $ID = $ib->Add($arFields);
+    }
+    //
+//добавление свойства телефон для заявок
+    $res = CIBlockProperty::GetByID("PHONE_APLIC", false, "services_applications_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Телефон",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "PHONE_APLIC",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpida
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+    //добавление свойства ссылка для заявок
+    $res = CIBlockProperty::GetByID("URL_APLIC", false, "services_applications_" . SITE_ID);
+    if (!$ar_res = $res->GetNext()) {
+        $arFields = array(
+            "NAME" => "Ссылка",
+            "ACTIVE" => "Y",
+            "SORT" => "500",
+            "DEFAULT_VALUE" => "",
+            "CODE" => "URL_APLIC",
+            "MULTIPLE" => "N",
+            "PROPERTY_TYPE" => "S",
+            "IBLOCK_ID" => $tpida
+        );
+        $arFields["VALUES"][0] = array(
+            "VALUE" => "Y",
+            "SORT" => "500"
+        );
+        $ibp = new CIBlockProperty;
+        $SrcPropID = $ibp->Add($arFields);
+    }
+    //
+//добавление раздела заявки формы призыва
+    $arFilter = array('IBLOCK_ID' => $tpida, 'GLOBAL_ACTIVE' => 'Y', 'CODE' => 'call_form_application');
+    $db_list = CIBlockSection::GetList(array($by => $order), $arFilter, true);
+    while ($ar_result = $db_list->GetNext()) {
+        $apfpid = $ar_result['ID'];
+    }
+    if (!$apfpid) {
+
+
+        $bs = new CIBlockSection;
+        $arFields = array(
+            "ACTIVE" => 'Y',
+            "IBLOCK_ID" => $tpida,
+            "NAME" => 'Заявки формы призыва',
+            "SORT" => '500',
+            'CODE' => 'call_form_application',
+            "DESCRIPTION_TYPE" => 'text'
+        );
+
+        $ID = $bs->Add($arFields);
+
+    }
+
+
+    //
+
     $name_module = 'stranke.shop';
     $name_ex = explode('.', $name_module);
     $dir = $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $name_module . '/install';
@@ -355,7 +800,7 @@ use Stranke\CRM\CRMClient;
         CopyDirFiles($dir . '/wizards/' . implode('/', $name_ex) . '/site/templates/', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates', true, true);
 //        CopyDirFiles($dir . '/wizards/' . implode('/', $name_ex) . '/site/templates/stranke_shop/lang', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/templates/stranke_shop/lang', true, true);
         CopyDirFiles($dir . '/wizards/' . implode('/', $name_ex) . '/site/public/ru/', $_SERVER['DOCUMENT_ROOT'] . '/', true, true);
-        CopyDirFiles($dir . '/wizards/' , $_SERVER['DOCUMENT_ROOT'] . '/bitrix/wizards', true, true);
+        CopyDirFiles($dir . '/wizards/', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/wizards', true, true);
 
         echo 'Update';
         die();
@@ -382,7 +827,7 @@ use Stranke\CRM\CRMClient;
             $one_iteration = 30;
             $arFilter = array('IBLOCK_ID' => $IBLOCK_ID, '<DATE_CREATE' => '01.01.2018');
             $arFilter['!PROPERTY_STATUS'] = array('cancel', 'archive');
-            $res = CIBlockElement::GetList(Array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
+            $res = CIBlockElement::GetList(array('ID' => 'DESC'), $arFilter, false, array('nPageSize' => $one_iteration, 'iNumPage' => $_SESSION['UPDATE_STORE']));
             if ($res->PAGEN == $res->NavPageNomer) {
                 ?>
                 UPDATE_STORE: Step <? echo $res->NavPageNomer ?> of <? echo $res->NavPageCount ?><br>

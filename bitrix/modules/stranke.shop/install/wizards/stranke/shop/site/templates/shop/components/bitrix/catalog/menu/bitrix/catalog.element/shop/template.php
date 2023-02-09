@@ -34,6 +34,7 @@ $arProp = $arResult['PROPERTIES'];
 $GLOBALS['PRODUCT_PROP'] = $arProp;
 $GLOBALS['PRODUCT_PROP']['INGREDIENTS'] = $arResult['PREVIEW_TEXT'];
 $GLOBALS['PRODUCT_PROP']['DESCRIPTION'] = $arResult['DETAIL_TEXT'];
+
 $arPhotoElementsID = $arProp['dop_photo']['VALUE'];
 
 $imgAlt = '';
@@ -53,6 +54,7 @@ $youTubeCode = $arResult['PROPERTIES']['YOUTUBE_CODE']['VALUE'];
 $this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_EDIT"));
 $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 ?>
+
 <div class="wrapper catalog-element">
     <div class="products__product" itemscope itemtype="http://schema.org/Product">
 
@@ -136,9 +138,8 @@ $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetAr
                     // }
                 });
             </script>
-
             <script>
-                BX.message({
+                    BX.message({
                     ST_ADD_TO_BASKET: '<?=GetMessage('ST_ADD_TO_BASKET')?>',
                     CT_BCE_CATALOG_SELECT_OFFER: '<?=GetMessage('CT_BCE_CATALOG_SELECT_OFFER')?>',
                     CT_BCE_CATALOG_NO_AVAILABLE: '<?=GetMessage('CT_BCE_CATALOG_NO_AVAILABLE')?>',

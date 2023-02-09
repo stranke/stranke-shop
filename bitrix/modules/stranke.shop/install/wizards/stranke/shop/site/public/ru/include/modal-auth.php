@@ -39,6 +39,16 @@
                                 <input value="get_code" type="hidden" name="method">
                             </div>
                             <div class="error"></div>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.userconsent.request",
+                                "sogl_auth",
+                                Array(
+                                    "AUTO_SAVE" => "Y",
+                                    "ID" => "1",
+                                    "IS_CHECKED" => "Y",
+                                    "IS_LOADED" => "N"
+                                )
+                            );?>
                             <div class="wrap-btn">
                                 <button class="btn bg_main" role="get_code" onclick="get_code_static(this)">
                                     Получить код
@@ -59,7 +69,7 @@
                                 <input value="check_code" type="hidden" name="method">
                             </div>
                             <div class="error"></div>
-                            <div class="new-review__checkbox-block">
+                            <?/*?><div class="new-review__checkbox-block">
 
                                 <label class="new-review__checkbox-label custom_field_wrap">
 
@@ -72,7 +82,7 @@
                                     <span class="custom_error_message"></span>
                                 </label>
 
-                            </div>
+                            </div><?*/?>
                             <div class="wrap-btn">
                                 <button class="btn bg_main" role="get_code" onclick="check_code_static(this)">
                                     Войти
@@ -92,3 +102,8 @@
         </div>
     </div>
 </div>
+<script>
+    function target_ym_auth(){
+        console.info(456)
+    }
+</script>

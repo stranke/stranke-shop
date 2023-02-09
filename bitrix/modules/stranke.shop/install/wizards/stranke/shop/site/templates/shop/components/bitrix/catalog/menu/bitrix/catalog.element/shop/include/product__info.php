@@ -1,3 +1,6 @@
+<? global $app?>
+
+
 <div class="product__data" product_id="<?= $arResult['ID'] ?>">
     <h1 class="product__title" itemprop="name"><?= $name ?></h1>
     <div class="product__info">
@@ -31,7 +34,7 @@
                             <? elseif (!$arResult['OFFER_ID']): ?>
                                 <div role="buy_btn" class="btn bg_main product__buy-btn product__buy-btn_not-available js-productBtn"><?= GetMessage('CT_BCE_CATALOG_SELECT_OFFER') ?></div>
                             <? elseif ($arOffer['CATALOG_QUANTITY'] > 0 || $arOffer['PRODUCT']['CAN_BUY_ZERO'] == 'Y'): ?>
-                                <div role="buy_btn" class="btn bg_main product__buy-btn js-productBtn">
+                                <div role="buy_btn" class="btn bg_main product__buy-btn js-productBtn" >
                                     <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18.9282 25H1.53333C1.24615 25 1 24.7538 1 24.4666V7.68714C1 7.39996 1.24615 7.15381 1.53333 7.15381H18.9282C19.2154 7.15381 19.4615 7.39996 19.4615 7.68714V24.4666C19.4615 24.7538 19.2154 25 18.9282 25Z" stroke="white" stroke-width="1.23" stroke-miterlimit="10"/>
                                         <path d="M4.89746 7.15385C4.89746 1 10.2308 1 10.2308 1C10.2308 1 15.5641 1 15.5641 7.15385" stroke="white" stroke-width="1.23" stroke-miterlimit="10"/>
@@ -47,6 +50,7 @@
                         <? endif ?>
 
                         <? $av_yes = $arResult["CATALOG_QUANTITY"] > 0; ?>
+                        <?if($app->config->stock_balance == 'Y'){?>
                         <div class="info-quantity" role="quantity_info">
                             <? if (!$av_yes): ?>
                                 <span class="unavailable"><?= GetMessage('CT_BCE_CATALOG_NO_AVAILABLE') ?></span>
@@ -55,6 +59,7 @@
                                 <span class="available"><?= $arResult["CATALOG_QUANTITY"]; ?> <?= GetMessage('CT_BCE_CATALOG_COUNT_IZM') ?></span>
                             <? endif; ?>
                         </div>
+                        <?}?>
                     </div>
                 </div>
             </div>
@@ -103,3 +108,9 @@
         </div>
     </div>
 </div>
+<script>
+    function targetaddtobasket (){
+        <?=$app->config->targetaddtobasket?>
+    }
+</script>
+

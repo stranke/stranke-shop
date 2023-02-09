@@ -1,3 +1,4 @@
+<?global $app?>
 <div class="product__info_contents_2">
     <div class="product__info">
         <div class="products__item-data">
@@ -60,16 +61,24 @@
                 <? endif ?>
 
 
-                <? $av_yes = $arItem["CATALOG_QUANTITY"] > 0; ?>
-                <div class="info-quantity" role="quantity_info">
-                    <? if (!$av_yes): ?>
-                        <span class="unavailable"><?= GetMessage('CT_BCE_CATALOG_NO_AVAILABLE') ?></span>
-                    <? else: ?>
-                        <?= GetMessage('CT_BCE_CATALOG_COUNT_AVAILABLE') ?>:
-                        <span class="available"><?= $arItem["CATALOG_QUANTITY"]; ?> <?= GetMessage('CT_BCE_CATALOG_COUNT_IZM') ?></span>
-                    <? endif; ?>
-                </div>
+                <?if($app->config->stock_balance == 'Y'){?>
+                    <? $av_yes = $arItem["CATALOG_QUANTITY"] > 0; ?>
+                    <div class="info-quantity" role="quantity_info">
+                        <? if (!$av_yes): ?>
+                            <span class="unavailable"><?= GetMessage('CT_BCE_CATALOG_NO_AVAILABLE') ?></span>
+                        <? else: ?>
+                            <?= GetMessage('CT_BCE_CATALOG_COUNT_AVAILABLE') ?>:
+                            <span class="available"><?= $arItem["CATALOG_QUANTITY"]; ?> <?= GetMessage('CT_BCE_CATALOG_COUNT_IZM') ?></span>
+                        <? endif; ?>
+                    </div>
+                <?}?>
+
             </div>
         </div>
     </div>
 </div>
+<script>
+    function targetaddtobasket (){
+        <?=$app->config->targetaddtobasket?>
+    }
+</script>

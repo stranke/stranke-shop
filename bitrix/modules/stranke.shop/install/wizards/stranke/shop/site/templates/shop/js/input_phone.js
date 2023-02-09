@@ -47,7 +47,7 @@
 
 $(window).on("load", function () {
     var elems = $('[name=phone],[is_phone=Y]')
-    $(document).on('focus', '[name=phone],[is_phone=Y]', function () {
+    $(document).on('focus', '[name=phone],[is_phone=Y],[name=PHONE]', function () {
         var elem = $(this);
         elem.phone_mask();
     });

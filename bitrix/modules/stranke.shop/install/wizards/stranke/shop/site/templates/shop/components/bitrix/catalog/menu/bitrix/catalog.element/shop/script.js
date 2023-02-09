@@ -322,8 +322,7 @@
                 this.obPrice.price = BX(this.visual.PRICE_ID);
                 if (!this.obPrice.price && this.config.useCatalog) {
                     this.errorCode = -16;
-                }
-                else {
+                } else {
                     this.obPrice.total = BX(this.visual.PRICE_TOTAL);
 
                     if (this.config.showOldPrice) {
@@ -522,8 +521,7 @@
                                     COUNT: this.offers[i].SLIDER_COUNT,
                                     ITEMS: []
                                 };
-                            }
-                            else {
+                            } else {
                                 for (j = 0; j < this.offers[i].SLIDER.length; j++) {
                                     this.offers[i].SLIDER[j].WIDTH = parseInt(this.offers[i].SLIDER[j].WIDTH, 10);
                                     this.offers[i].SLIDER[j].HEIGHT = parseInt(this.offers[i].SLIDER[j].HEIGHT, 10);
@@ -599,8 +597,7 @@
 
             if (this.config.showSlider && !this.isTouchDevice) {
                 this.config.sliderInterval = parseInt(this.params.CONFIG.SLIDER_INTERVAL) || 5000;
-            }
-            else {
+            } else {
                 this.config.sliderInterval = false;
             }
 
@@ -689,8 +686,7 @@
                 }
 
                 this.currentIsSet = true;
-            }
-            else {
+            } else {
                 this.errorCode = -1;
             }
         },
@@ -718,8 +714,7 @@
                     this.product.name = this.params.PRODUCT.NAME;
                     this.product.category = this.params.PRODUCT.CATEGORY;
                 }
-            }
-            else {
+            } else {
                 this.errorCode = -1;
             }
         },
@@ -772,19 +767,16 @@
 
                     if (this.params.COMPARE.COMPARE_URL_TEMPLATE) {
                         this.compareData.compareUrl = this.params.COMPARE.COMPARE_URL_TEMPLATE;
-                    }
-                    else {
+                    } else {
                         this.config.useCompare = false;
                     }
 
                     if (this.params.COMPARE.COMPARE_DELETE_URL_TEMPLATE) {
                         this.compareData.compareDeleteUrl = this.params.COMPARE.COMPARE_DELETE_URL_TEMPLATE;
-                    }
-                    else {
+                    } else {
                         this.config.useCompare = false;
                     }
-                }
-                else {
+                } else {
                     this.config.useCompare = false;
                 }
             }
@@ -794,8 +786,7 @@
             if (this.node.sliderProgressBar) {
                 if (this.slider.progress) {
                     this.resetProgress();
-                }
-                else {
+                } else {
                     this.slider.progress = new BX.easing({
                         transition: BX.easing.transitions.linear,
                         step: BX.delegate(function (state) {
@@ -928,8 +919,7 @@
                                 BX.addClass(panelTabs[i], 'active');
                                 BX.show(targetTab);
                                 haveActive = true;
-                            }
-                            else {
+                            } else {
                                 BX.removeClass(tabs[i], 'active');
                                 BX.removeClass(panelTabs[i], 'active');
                                 BX.hide(targetTab);
@@ -991,8 +981,7 @@
                         this.slideNext();
                     }, this);
                     this.slider.progress.animate();
-                }
-                else {
+                } else {
                     this.slider.interval = setInterval(BX.proxy(this.slideNext, this), this.config.sliderInterval);
                 }
             }
@@ -1087,8 +1076,7 @@
 
                 if (scrollTop > targetPos) {
                     BX.addClass(this.smallCardNodes.panel, 'active');
-                }
-                else if (BX.hasClass(this.smallCardNodes.panel, 'active')) {
+                } else if (BX.hasClass(this.smallCardNodes.panel, 'active')) {
                     BX.removeClass(this.smallCardNodes.panel, 'active');
                 }
             }
@@ -1098,8 +1086,7 @@
 
                 if (scrollTop + 73 > targetPos) {
                     BX.addClass(this.obTabsPanel, 'active');
-                }
-                else if (BX.hasClass(this.obTabsPanel, 'active')) {
+                } else if (BX.hasClass(this.obTabsPanel, 'active')) {
                     BX.removeClass(this.obTabsPanel, 'active');
                 }
             }
@@ -1117,8 +1104,7 @@
                     if (containers.hasOwnProperty(i) && BX.type.isDomNode(containers[i])) {
                         if (containers[i].getAttribute('data-value') === targetTabValue) {
                             BX.show(containers[i]);
-                        }
-                        else {
+                        } else {
                             BX.hide(containers[i]);
                         }
                     }
@@ -1132,8 +1118,7 @@
                         if (tabs[i].getAttribute('data-value') === targetTabValue) {
                             BX.addClass(tabs[i], 'active');
                             BX.addClass(panelTabs[i], 'active');
-                        }
-                        else {
+                        } else {
                             BX.removeClass(tabs[i], 'active');
                             BX.removeClass(panelTabs[i], 'active');
                         }
@@ -1195,8 +1180,7 @@
                         }
 
                         BX.addClass(images[l], 'active');
-                    }
-                    else if (BX.hasClass(images[l], 'active')) {
+                    } else if (BX.hasClass(images[l], 'active')) {
                         BX.removeClass(images[l], 'active');
                     }
                 }
@@ -1264,8 +1248,7 @@
                     }, this),
                     250
                 );
-            }
-            else {
+            } else {
                 this.currentImg.node.src = this.currentImg.src;
                 this.currentImg.node.style.height = '';
                 this.currentImg.node.style.width = '';
@@ -1300,8 +1283,7 @@
                         w = sliderWidth;
                         h = w / resolution;
                         zoomPercent = 100;
-                    }
-                    else {
+                    } else {
                         w = this.currentImg.width;
                         h = this.currentImg.height;
                         zoomPercent = this.config.magnifierZoomPercent > 100 ? this.config.magnifierZoomPercent : 100;
@@ -1321,8 +1303,7 @@
                 }
 
                 this.magnify.enabled = true;
-            }
-            else {
+            } else {
                 this.disableMagnifier(true);
             }
         },
@@ -1385,8 +1366,7 @@
 
                         if (value === intPict) {
                             BX.addClass(this.product.slider.ITEMS[i], 'active');
-                        }
-                        else if (BX.hasClass(this.product.slider.ITEMS[i], 'active')) {
+                        } else if (BX.hasClass(this.product.slider.ITEMS[i], 'active')) {
                             BX.removeClass(this.product.slider.ITEMS[i], 'active');
                         }
                     }
@@ -1422,8 +1402,7 @@
                 if (strValue.indexOf('_') !== -1) {
                     arItem = strValue.split('_');
                     this.setMainPict(arItem[0], arItem[1]);
-                }
-                else {
+                } else {
                     this.setProductMainPict(strValue);
                 }
             }
@@ -1465,8 +1444,7 @@
 
                             if (value === strValue) {
                                 BX.addClass(this.product.slider.ITEMS[i], 'active');
-                            }
-                            else if (BX.hasClass(this.product.slider.ITEMS[i], 'active')) {
+                            } else if (BX.hasClass(this.product.slider.ITEMS[i], 'active')) {
                                 BX.removeClass(this.product.slider.ITEMS[i], 'active');
                             }
                         }
@@ -1484,8 +1462,7 @@
                     if (this.offers[index].DETAIL_PICTURE) {
                         obNewPict = this.offers[index].DETAIL_PICTURE;
                         boolSet = true;
-                    }
-                    else if (this.offers[index].PREVIEW_PICTURE) {
+                    } else if (this.offers[index].PREVIEW_PICTURE) {
                         obNewPict = this.offers[index].PREVIEW_PICTURE;
                         boolSet = true;
                     }
@@ -1495,8 +1472,7 @@
                     if (this.defaultPict.detail) {
                         obNewPict = this.defaultPict.detail;
                         boolSet = true;
-                    }
-                    else if (this.defaultPict.preview) {
+                    } else if (this.defaultPict.preview) {
                         obNewPict = this.defaultPict.preview;
                         boolSet = true;
                     }
@@ -1511,8 +1487,7 @@
         toggleMainPictPopup: function () {
             if (BX.hasClass(this.obBigSlider, 'popup')) {
                 this.hideMainPictPopup();
-            }
-            else {
+            } else {
                 this.showMainPictPopup();
             }
         },
@@ -1636,8 +1611,7 @@
 
                         if (curValue < this.minQuantity) {
                             curValue = this.minQuantity;
-                        }
-                        else {
+                        } else {
                             intCount = Math.round(
                                 Math.round(curValue * this.precisionFactor / this.stepQuantity) / this.precisionFactor
                             ) || 1;
@@ -1646,12 +1620,10 @@
                         }
 
                         this.obQuantity.value = curValue;
-                    }
-                    else {
+                    } else {
                         this.obQuantity.value = this.minQuantity;
                     }
-                }
-                else {
+                } else {
                     this.obQuantity.value = this.minQuantity;
                 }
 
@@ -1685,8 +1657,7 @@
                     this.smallCardNodes.notAvailableButton && BX.style(this.smallCardNodes.notAvailableButton, 'display', 'none');
 
                     this.obSubscribe && BX.style(this.obSubscribe, 'display', 'none');
-                }
-                else {
+                } else {
                     this.node.quantity && BX.style(this.node.quantity, 'display', 'none');
 
                     this.obBasketActions && BX.style(this.obBasketActions, 'display', 'none');
@@ -1701,8 +1672,7 @@
                             BX.style(this.obSubscribe, 'display', '');
                             this.obSubscribe.setAttribute('data-item', newOffer.ID);
                             BX(this.visual.SUBSCRIBE_LINK + '_hidden').click();
-                        }
-                        else {
+                        } else {
                             BX.style(this.obSubscribe, 'display', 'none');
                         }
                     }
@@ -1715,8 +1685,7 @@
                     this.stepQuantity = Math.round(parseFloat(newOffer.STEP_QUANTITY) * this.precisionFactor) / this.precisionFactor;
                     this.maxQuantity = parseFloat(newOffer.MAX_QUANTITY);
                     this.minQuantity = this.currentPriceMode === 'Q' ? parseFloat(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
-                }
-                else {
+                } else {
                     this.stepQuantity = parseInt(newOffer.STEP_QUANTITY, 10);
                     this.maxQuantity = parseInt(newOffer.MAX_QUANTITY, 10);
                     this.minQuantity = this.currentPriceMode === 'Q' ? parseInt(this.currentPrices[this.currentPriceSelected].MIN_QUANTITY) : this.stepQuantity;
@@ -1736,8 +1705,7 @@
                                 && parseFloat(oldOffer.MAX_QUANTITY) > this.maxQuantity
                                 && parseFloat(this.obQuantity.value) > this.maxQuantity
                             );
-                    }
-                    else {
+                    } else {
                         resetQuantity = parseInt(oldOffer.STEP_QUANTITY, 10) !== this.stepQuantity
                             || isDifferentMinQuantity
                             || oldOffer.MEASURE !== newOffer.MEASURE
@@ -1757,8 +1725,7 @@
                     if (this.obMeasure) {
                         if (newOffer.MEASURE) {
                             BX.adjust(this.obMeasure, {html: newOffer.MEASURE});
-                        }
-                        else {
+                        } else {
                             BX.adjust(this.obMeasure, {html: ''});
                         }
                     }
@@ -1768,14 +1735,12 @@
                     if (!this.checkQuantity || this.maxQuantity == 0) {
                         BX.adjust(this.obQuantityLimit.value, {html: ''});
                         BX.adjust(this.obQuantityLimit.all, {style: {display: 'none'}});
-                    }
-                    else {
+                    } else {
                         if (this.config.showMaxQuantity === 'M') {
                             strLimit = (this.maxQuantity / this.stepQuantity >= this.config.relativeQuantityFactor)
                                 ? BX.message('RELATIVE_QUANTITY_MANY')
                                 : BX.message('RELATIVE_QUANTITY_FEW');
-                        }
-                        else {
+                        } else {
                             strLimit = this.maxQuantity;
 
                             if (newOffer.MEASURE) {
@@ -1805,8 +1770,7 @@
                         }
 
                         this.obPriceRanges.style.display = '';
-                    }
-                    else {
+                    } else {
                         this.obPriceRanges.style.display = 'none';
                     }
 
@@ -1903,19 +1867,16 @@
                             if (this.getCanBuy(tmpFilter))
                                 arCanBuyValues[arCanBuyValues.length] = arShowValues[j];
                         }
-                    }
-                    else {
+                    } else {
                         arCanBuyValues = arShowValues;
                     }
 
                     if (this.selectedValues[strName] && BX.util.in_array(this.selectedValues[strName], arCanBuyValues)) {
                         arFilter[strName] = this.selectedValues[strName];
-                    }
-                    else {
+                    } else {
                         if (this.config.showAbsent) {
                             arFilter[strName] = (arCanBuyValues.length ? arCanBuyValues[0] : allValues[0]);
-                        }
-                        else {
+                        } else {
                             arFilter[strName] = arCanBuyValues[0];
                         }
                     }
@@ -1944,15 +1905,13 @@
 
                     if (isCurrent) {
                         BX.addClass(rowItems[i], 'selected');
-                    }
-                    else {
+                    } else {
                         BX.removeClass(rowItems[i], 'selected');
                     }
 
                     if (BX.util.in_array(value, canBuyId)) {
                         BX.removeClass(rowItems[i], 'notallowed');
-                    }
-                    else {
+                    } else {
                         BX.addClass(rowItems[i], 'notallowed');
                     }
 
@@ -1971,15 +1930,13 @@
 
                         if (isCurrent) {
                             rowItems[i].style.display = '';
-                        }
-                        else {
+                        } else {
                             rowItems[i].style.display = 'none';
                         }
 
                         if (BX.util.in_array(value, canBuyId)) {
                             BX.removeClass(rowItems[i], 'notallowed');
-                        }
-                        else {
+                        } else {
                             BX.addClass(rowItems[i], 'notallowed');
                         }
 
@@ -2005,8 +1962,7 @@
                     }
                 }
                 boolSearch = true;
-            }
-            else {
+            } else {
                 for (i = 0; i < this.offers.length; i++) {
                     boolOneSearch = true;
 
@@ -2076,8 +2032,7 @@
 
                 if (BX.util.in_array(current[strName], arShowValues)) {
                     arFilter[strName] = current[strName];
-                }
-                else {
+                } else {
                     arFilter[strName] = arShowValues[0];
                     this.offerNum = 0;
                 }
@@ -2094,8 +2049,7 @@
                             arCanBuyValues[arCanBuyValues.length] = arShowValues[j];
                         }
                     }
-                }
-                else {
+                } else {
                     arCanBuyValues = arShowValues;
                 }
 
@@ -2152,27 +2106,23 @@
                         if (i === index) {
                             this.product.slider = this.slider.controls[i];
                             this.slider.controls[i].CONT && BX.show(this.slider.controls[i].CONT);
-                        }
-                        else {
+                        } else {
                             this.slider.controls[i].CONT && BX.hide(this.slider.controls[i].CONT);
                         }
-                    }
-                    else if (i === index) {
+                    } else if (i === index) {
                         this.product.slider = {};
                     }
                 }
 
                 if (this.offers[index].SLIDER_COUNT > 0) {
                     this.setMainPict(this.offers[index].ID, this.offers[index].SLIDER[0].ID, true);
-                }
-                else {
+                } else {
                     this.setMainPictFromItem(index);
                 }
 
                 if (this.offers[index].SLIDER_COUNT > 1) {
                     this.initSlider();
-                }
-                else {
+                } else {
                     this.stopSlider();
                 }
 
@@ -2180,8 +2130,7 @@
                     if (this.obSkuProps) {
                         if (!this.offers[index].DISPLAY_PROPERTIES) {
                             BX.adjust(this.obSkuProps, {style: {display: 'none'}, html: ''});
-                        }
-                        else {
+                        } else {
                             BX.adjust(this.obSkuProps, {
                                 style: {display: ''},
                                 html: this.offers[index].DISPLAY_PROPERTIES
@@ -2192,8 +2141,7 @@
                     if (this.obMainSkuProps) {
                         if (!this.offers[index].DISPLAY_PROPERTIES_MAIN_BLOCK) {
                             BX.adjust(this.obMainSkuProps, {style: {display: 'none'}, html: ''});
-                        }
-                        else {
+                        } else {
                             BX.adjust(this.obMainSkuProps, {
                                 style: {display: ''},
                                 html: this.offers[index].DISPLAY_PROPERTIES_MAIN_BLOCK
@@ -2262,8 +2210,7 @@
         restoreSticker: function () {
             if (this.previousStickerText) {
                 this.redrawSticker({text: this.previousStickerText});
-            }
-            else {
+            } else {
                 this.hideSticker();
             }
         },
@@ -2313,8 +2260,7 @@
                     ) {
                         nearestQuantity = quantity;
                         break;
-                    }
-                    else {
+                    } else {
                         diffFrom = parseFloat(range.SORT_FROM) - quantity;
                         absDiffFrom = Math.abs(diffFrom);
                         diffTo = parseFloat(range.SORT_TO) - quantity;
@@ -2413,22 +2359,19 @@
 
             if (reachedTopLimit) {
                 BX.addClass(this.obQuantityUp, 'product-item-amount-field-btn-disabled');
-            }
-            else if (BX.hasClass(this.obQuantityUp, 'product-item-amount-field-btn-disabled')) {
+            } else if (BX.hasClass(this.obQuantityUp, 'product-item-amount-field-btn-disabled')) {
                 BX.removeClass(this.obQuantityUp, 'product-item-amount-field-btn-disabled');
             }
 
             if (reachedBottomLimit) {
                 BX.addClass(this.obQuantityDown, 'product-item-amount-field-btn-disabled');
-            }
-            else if (BX.hasClass(this.obQuantityDown, 'product-item-amount-field-btn-disabled')) {
+            } else if (BX.hasClass(this.obQuantityDown, 'product-item-amount-field-btn-disabled')) {
                 BX.removeClass(this.obQuantityDown, 'product-item-amount-field-btn-disabled');
             }
 
             if (reachedTopLimit && reachedBottomLimit) {
                 this.obQuantity.setAttribute('disabled', 'disabled');
-            }
-            else {
+            } else {
                 this.obQuantity.removeAttribute('disabled');
             }
         },
@@ -2456,8 +2399,7 @@
                     this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {
                         html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)
                     });
-                }
-                else {
+                } else {
                     BX.adjust(this.obPrice.price, {html: ''});
                     this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {html: ''});
                 }
@@ -2486,8 +2428,7 @@
                             html: -price.PERCENT + '%'
                         });
                     }
-                }
-                else {
+                } else {
                     if (this.config.showOldPrice) {
                         this.obPrice.full && BX.adjust(this.obPrice.full, {style: {display: 'none'}, html: ''});
                         this.smallCardNodes.oldPrice && BX.adjust(this.smallCardNodes.oldPrice, {
@@ -2510,8 +2451,7 @@
                                 + '</strong>',
                             style: {display: ''}
                         });
-                    }
-                    else {
+                    } else {
                         BX.adjust(this.obPrice.total, {
                             html: '',
                             style: {display: 'none'}
@@ -2600,8 +2540,7 @@
                             }
                         })
                     ];
-                }
-                else {
+                } else {
                     popupButtons = [
                         new BasketButton({
                             text: BX.message('BTN_MESSAGE_COMPARE_REDIRECT'),
@@ -2611,8 +2550,7 @@
                         })
                     ];
                 }
-            }
-            else {
+            } else {
                 popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
                     + (result.MESSAGE ? result.MESSAGE : BX.message('COMPARE_UNKNOWN_ERROR'))
                     + '</p></div>';
@@ -2664,8 +2602,7 @@
         compareRedirect: function () {
             if (this.compareData.comparePath) {
                 location.href = this.compareData.comparePath;
-            }
-            else {
+            } else {
                 this.obPopupWin.close();
             }
         },
@@ -2736,8 +2673,7 @@
                 if (this.obPopupWin && this.obPopupWin.contentContainer) {
                     obBasketProps = this.obPopupWin.contentContainer;
                 }
-            }
-            else {
+            } else {
                 obBasketProps = BX(this.visual.BASKET_PROP_DIV);
             }
 
@@ -2839,8 +2775,7 @@
                             })
                         ]);
                         this.obPopupWin.show();
-                    }
-                    else {
+                    } else {
                         this.sendToBasket();
                     }
                     break;
@@ -2866,8 +2801,7 @@
 
             if (arResult.STATUS === 'OK' && this.basketMode === 'BUY') {
                 this.basketRedirect();
-            }
-            else {
+            } else {
                 this.initPopupWindow();
 
                 if (arResult.STATUS === 'OK') {
@@ -2904,8 +2838,7 @@
                                 }
                             })
                         ];
-                    }
-                    else {
+                    } else {
                         popupButtons = [
                             new BasketButton({
                                 text: BX.message('BTN_MESSAGE_BASKET_REDIRECT'),
@@ -2915,8 +2848,7 @@
                             })
                         ];
                     }
-                }
-                else {
+                } else {
                     popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
                         + (arResult.MESSAGE ? arResult.MESSAGE : BX.message('BASKET_UNKNOWN_ERROR'))
                         + '</p></div>';
@@ -3068,6 +3000,7 @@ function init_product_offers(product_id, offers = false) {
 
         if (arResult.STATUS === 'OK') {
             // this.setAnalyticsDataLayer('addToCart');
+            var targetaddtobasketp = targetaddtobasket()
         }
 
 
@@ -3121,12 +3054,61 @@ function init_product_offers(product_id, offers = false) {
     }
 
     function change_product_offers() {
+
         offer_id = parseInt($offersInputRadio.val())
         if (typeof productDetail != 'undefined')
             productDetail.productId = offer_id;
         var offer = offers.find(item => item.ID == offer_id)
+        var detail_pirture = $('.photo-block__gallery-top .swiper-slide__bg img')
+        var small_pirture = $('.photo-block__gallery-bottom .swiper-slide__bg img')
+        var fancy_pirture = $('.photo-block__gallery-top .swiper-slide')
         $product_div.find('[role="price_old"]').remove();
         $product_div.find('[role="price_value"]').html(offer.MIN_PRICE.PRINT_DISCOUNT_VALUE)
+        window.galleryThumbs.controller.control.destroy(true)
+        window.galleryThumbs.destroy(true)
+
+        if (offer.recomendtovar) {
+            var recomvovrecbl = ''
+            offer.recomendtovar.forEach(function (elem, index) {
+                var recomvovrec = '<div class="products__item" url="' + elem.DETAILURL + '" id="bx_3966226736_515" product_id="' + elem.ID + '"><div class="image"><canvas width="237" height="196"></canvas><img class="lazy" src="' + elem.image + '" data-src="' + elem.image + '" data-href="' + elem.image + '" data-lazy-load="" itemprop="image" title="' + elem.NAME + '"  onclick="document.location.href = \'' + elem.DETAILURL + '\'"></div><div class="product__info_contents_2"><div class="product__info"><div class="products__item-data"><div class="product__info_contents_3"><a href="' + elem.DETAILURL + '" class="name">' + elem.NAME + '</a></div></div><div class="products__item-buyblock"><div class="product__price" role="price"><div role="price_old" class="product__price-old"></div><div role="price_value" class="product__price-value">' + elem.PRICE + ' P</div></div></div></div></div></div>'
+                recomvovrecbl = recomvovrecbl + recomvovrec;
+            });
+            $('.recomend_product_block .products__item-list').html(recomvovrecbl)
+
+        }
+        if (small_pirture.length == 0) {
+            detail_pirture.first().attr('src', offer.DETAIL_PICTURE.SRC);
+            if (small_pirture) {
+                small_pirture.first().attr('src', offer.DETAIL_PICTURE.SRC);
+            }
+            fancy_pirture.first().attr('href', offer.DETAIL_PICTURE.SRC);
+        } else {
+            var sliderbigblockdetail = '<a class="swiper-slide lbimg" href="' + offer.DETAIL_PICTURE.SRC + '" rel="group_' + offer.ID + '">' +
+                '<div class="swiper-slide__bg">\n' +
+                '<canvas width="540" height="450"></canvas>\n' +
+                '<img src="' + offer.DETAIL_PICTURE.SRC + '"></div></a>'
+            var slidersmallblockdetail = '<div class="swiper-slide" style="width: 68px"><div class="swiper-slide__bg"><canvas width="68" height="55"></canvas><img src="' + offer.DETAIL_PICTURE.SRC + '" alt="product"></div></div>'
+            var sliderbigelev = ''
+            offer.IMG.SHOW.forEach(function (elem, index) {
+                var sliderbigblock = '<a class="swiper-slide lbimg" href="' + offer.IMG.BIG[index] + '" rel="group_' + offer.ID + '">' +
+                    '<div class="swiper-slide__bg">\n' +
+                    '<canvas width="540" height="450"></canvas>\n' +
+                    '<img src="' + elem + '"></div></a>'
+                sliderbigelev = sliderbigelev + sliderbigblock
+            });
+            var sliderbig = '<div class="swiper-wrapper">' + sliderbigblockdetail + sliderbigelev + '</div>'
+            var slidersmallelev = '';
+            offer.IMG.SMALL.forEach(function (elem, index) {
+                var slidersmallblock = '<div class="swiper-slide" style="width: 68px"><div class="swiper-slide__bg"><canvas width="68" height="55"></canvas><img src="' + elem + '" alt="product"></div></div>'
+
+                slidersmallelev = slidersmallelev + slidersmallblock
+            });
+
+            var slidersmall = '<div class="swiper-wrapper">' + slidersmallblockdetail + slidersmallelev + '</div>'
+        }
+        $('.photo-block__gallery-top .gallery-top').html(sliderbig)
+        $('.photo-block__gallery-bottom .swiper-container').html(slidersmall)
+        load_swiper();
         if (offer.MIN_PRICE.DISCOUNT_DIFF) {
             $product_div.find('[role="price"]').prepend('<span role="price_old" class="product__price-old">' + offer.MIN_PRICE.PRINT_VALUE + '</span>')
         }
@@ -3145,6 +3127,7 @@ function init_product_offers(product_id, offers = false) {
         } else {
             $product_div.find('[role="quantity_info"]').html(BX.message('CT_BCE_CATALOG_COUNT_AVAILABLE') + ' <span class="available">' + offer.CATALOG_QUANTITY + ' ' + BX.message('CT_BCE_CATALOG_COUNT_IZM') + '</span>')
         }
+
     }
 
     $offersInputRadio.on('change', change_product_offers);
@@ -3188,6 +3171,7 @@ function load_swiper() {
         galleryTop.controller.control = galleryThumbs;
         galleryThumbs.controller.control = galleryTop;
         window.galleryThumbs = galleryThumbs;
+        window.galleryTop = galleryTop;
     }
 }
 
@@ -3475,3 +3459,118 @@ function ProductDetail(selector, productId) {
         this.load_delivery();
     }.bind(this))
 }
+
+function cropper_open_action() {
+    var lb = $('#modal_action')
+
+    setTimeout(function () {
+        lb.addClass('preload')
+    }, 10)
+    setTimeout(function () {
+        lb.removeClass('preload')
+        lb.addClass('show')
+    }, 200)
+}
+
+function cropper_close_action(event) {
+    var close = false
+    if (typeof event == 'boolean') {
+        close = event
+    } else {
+        var classList = event.target.classList
+        if (classList.contains('lightbox') || classList.contains('lightbox_window_over')  || classList.contains('lightbox_window_close')) {
+            close = true
+        }
+    }
+    var lb = $('#modal_action')
+
+    if (close) {
+        lb.removeClass('show')
+        lb.addClass('preload')
+        setTimeout(function () {
+            lb.removeClass('preload')
+        }, 100)
+    }
+    $('.action_block').eq(1).css('display' , 'none')
+    $('.action_block').eq(0).css('display' , 'block')
+    $('input[name="PHONE"]').val('')
+    $('input[name="NAME"]').val('')
+    $('textarea[name="COMMENT"]').val('')
+}
+function SendCallbackFormpr(elem) {
+
+
+
+        var data = {};
+        var status = true;
+        var $name = $("#request-call-form-input-name");
+        var $phone = $("#request-call-form-input-phone");
+        var $text = $("#request-call-form-textarea");
+
+        if ($name.val() !== '') {
+            data.name = $name.val();
+        } else {
+            status = false;
+            $name.addClass('error');
+            $name.on('click', function () {
+                $(this)
+                    .removeClass("error")
+                    .val('')
+                    .off('click');
+            })
+        }
+        if ($phone.val() !== '') {
+            data.phone = $phone.val();
+        } else {
+            status = false;
+            $phone.addClass('error');
+            $phone.on('click', function () {
+                $(this)
+                    .removeClass("error")
+                    .val('')
+                    .off('click');
+            })
+        }
+        if ($text.val() !== '') {
+            data.text = $text.val();
+        } else {
+            status = false;
+            $text.addClass('error');
+            $text.on('click', function () {
+                $(this)
+                    .removeClass("error")
+                    .val('')
+                    .off('click');
+            })
+        }
+    data.nameproduct = $('input[name=ITEM_NAME]').val()
+        data.idproduct = $('input[name=ITEM_ID]').val()
+            data.urlproduct = window.location.href
+    if (status) {
+            $.ajax({
+                url: "/ajax/forms/action_form.php",
+                data: data,
+                method: "POST",
+                dataType: "json"
+            }).done(function (json) {
+
+                if (json.status) {
+                    $('.action_block').eq(0).css('display' , 'none')
+                    $('.action_block').eq(1).css('display' , 'block')
+
+                }
+
+            });
+
+
+        }
+
+
+
+
+
+
+}
+
+
+

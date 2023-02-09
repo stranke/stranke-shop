@@ -6,6 +6,7 @@ $MESS['ST_SETTINGS_TAB_4'] = 'Акции';
 $MESS['ST_SETTINGS_TAB_5'] = 'Контакты';
 $MESS['ST_SETTINGS_TAB_6'] = 'Футер';
 $MESS['ST_SETTINGS_TAB_7'] = 'Аналитика';
+$MESS['ST_SETTINGS_TAB_8'] = 'Страница товара';
 
 $MESS['ST_SETTINGS_TAB_MAIN'] = 'Основные';
 $MESS['ST_SETTINGS_TAB_MAIN_PAGE'] = 'Главная страница';

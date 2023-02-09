@@ -13,7 +13,7 @@
 /** @var CBitrixComponent $component */
 
 use \Bitrix\Main\Page\Asset;
-
+global $app;
 $this->setFrameMode(true);
 
 $asset = Asset::getInstance();
@@ -32,6 +32,16 @@ if ($arSection = $resSection->GetNext()) {
     $arSection_id = $arSection['ID'];
 }
 ?>
+<?if($app->config->bannertitlefontsize){
+    $bannertitlefontsize = 'style="font-size:' . $app->config->bannertitlefontsize . 'px"';
+} else {
+    $bannertitlefontsize = 'style="font-size:14px"';
+}?>
+<?if($app->config->bannersubtitlefontsize){
+    $bannersubtitlefontsize = 'style="font-size:' . $app->config->bannersubtitlefontsize . 'px"';
+} else {
+    $bannersubtitlefontsize = 'style="font-size:14px"';
+}?>
 <? if (!empty($arResult["ITEMS"])) { ?>
     <div class="wrapper">
         <div class="top-banner-on-main">
@@ -84,8 +94,8 @@ if ($arSection = $resSection->GetNext()) {
                                     <? endif ?>
                                 </div>
                                 <div class="swiper-slide__block-content" data-href="<?= $link ?>">
-                                    <div class="slider__title"><?= $name ?></div>
-                                    <div class="slider__text"><?= $title ?></div>
+                                    <div class="slider__title" <?=$bannertitlefontsize?>><?= $name ?></div>
+                                    <div class="slider__text" <?=$bannersubtitlefontsize?>><?= $title ?></div>
                                 </div>
                             </div>
 

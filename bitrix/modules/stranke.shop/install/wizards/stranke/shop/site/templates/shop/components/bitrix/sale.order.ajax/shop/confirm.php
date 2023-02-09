@@ -11,7 +11,11 @@ use Bitrix\Main\Localization\Loc;
 if ($arParams["SET_TITLE"] == "Y") {
     $APPLICATION->SetTitle(Loc::getMessage("SOA_ORDER_COMPLETE"));
 }
+global $app;
 ?>
+<script>
+    <?=$app->config->targetsuccessorder?>
+</script>
 <div class="bx-soa-order wrapper">
     <h1 class="bx-soa-order__title"><?= Loc::getMessage('STRANKE_SOA_TITLE') ?></h1>
 

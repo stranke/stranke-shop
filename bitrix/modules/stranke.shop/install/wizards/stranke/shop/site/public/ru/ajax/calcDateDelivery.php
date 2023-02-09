@@ -6,7 +6,7 @@ use Bitrix\Catalog\StoreProductTable;
 use Bitrix\Catalog\StoreTable;
 use Bitrix\Catalog\GroupTable;
 use Bitrix\Catalog\GroupLangTable;
-
+use \Bitrix\Sale\PropertyValueCollectionBase;
 
 if (!$_SESSION['city_location_id']) {
     if (!$_SESSION['city']) {
@@ -20,9 +20,11 @@ $arDelivery = [];
 
 function calcDateDelivery($PRODUCT_ID)
 {
-    $locationCode = $_SESSION['city_location_id'];
-
     \Bitrix\Main\Loader::includeModule('sale');
+    $locationCode = $_SESSION['city_location_id'];
+    $locationCode = CSaleLocation::GetByID($locationCode);
+
+
     $order = \Bitrix\Sale\Order::create(SITE_ID, 1);
     $basket = \Bitrix\Sale\Basket::create(SITE_ID);
     $item = $basket->createItem('catalog', $PRODUCT_ID); //$PRODUCT_ID – ИД товара
@@ -33,18 +35,9 @@ function calcDateDelivery($PRODUCT_ID)
         'PRODUCT_PROVIDER_CLASS' => 'CCatalogProductProvider',
     ));
 
-    /*$properties = array();
-    $properties['STORE'] = array(
-      'NAME' => 'Склад',
-      'CODE' => 'STORE',
-      'VALUE' => $storeName,
-      'SORT' => 1
-    );
-    $basketPropertyCollection = $item->getPropertyCollection();
-    $basketPropertyCollection->setProperty($properties);*/
 
     $order->setBasket($basket); // привязываем корзину к заказу
-//    $order->setPersonTypeId(3);  //ставим тип плательщика, чтобы пройти ограничения доставки по типу плательщика корректно
+    $order->setPersonTypeId(1);  //ставим тип плательщика, чтобы пройти ограничения доставки по типу плательщика корректно
 
     $shipmentCollection = $order->getShipmentCollection();
     $shipment = $shipmentCollection->createItem();
@@ -61,23 +54,20 @@ function calcDateDelivery($PRODUCT_ID)
     $propertyCollection = $order->getPropertyCollection();//получаем коллекцию свойств заказа
 
     $property = $propertyCollection->getDeliveryLocation();
+
+
     if ($property)
-        $r = $property->setField('VALUE', $locationCode);
+        $r = $property->setField('VALUE', $locationCode['CODE']);
 
-//    $property = $propertyCollection->getItemById(26);//выбираем ту что отвечает за местоположение
-//    $property->setValue($locationCode);//передаем местоположение
-
-
-//    echo '<pre>';
-//    print_r($locationCode);
-//    echo '</pre>';
 
     // Далее получаем список доступных для данного местоположения доставок.
     $deliveries = \Bitrix\Sale\Delivery\Services\Manager::getRestrictedObjectsList($shipment);
+
     // Обрабатываем в цикле все доступные доставки и запускаем расчет стоимости каждой из них. Для расчета каждый раз клонируем заказ и рассчитываем для него доставку.
+
     $arDeliveries = array();
     foreach ($deliveries as $key => $deliveryObj) {
-//        if ($deliveryObj->getCode() !== 'aalyans') continue;
+
         $clonedOrder = $order->createClone();//клонируем заказ
         $clonedShipment = null;
         foreach ($order->getShipmentCollection() as $shipment) {
@@ -97,7 +87,7 @@ function calcDateDelivery($PRODUCT_ID)
 
         if ($calcResult->isSuccess()) {
 
-//            if ($deliveryObj->getId() != "1") {
+
             $arDelivery['name'] = $deliveryObj->getName();//получаем ИД доставки
             $arDelivery['id'] = $deliveryObj->getId();//получаем ИД доставки
             $arDelivery['logo_path'] = $deliveryObj->getLogotipPath();//получаем логотип
@@ -129,7 +119,7 @@ function calcDateDelivery($PRODUCT_ID)
             if (method_exists($deliveryObj, 'getCountDays'))
                 $arDelivery["countDays"] = $deliveryObj->getCountDays();
             $arDeliveries[] = $arDelivery;//итоговый массив
-//            }
+
         }
     }
 

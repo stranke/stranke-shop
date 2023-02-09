@@ -2492,3 +2492,6 @@ label[data-bx-user-consent] input {
     position: relative;
     cursor: pointer;
 }
+.bx-soa-region{
+    display: none;
+}

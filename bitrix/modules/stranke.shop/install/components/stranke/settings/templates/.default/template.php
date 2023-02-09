@@ -29,8 +29,9 @@ $PROP = $arResult['SETTINGS']['PROP'];
         <div class="settings__tabs">
             <div class="settings__tab settings__tab_active" data-tab="main"><?= GetMessage('ST_SETTINGS_TAB_1') ?></div>
             <div class="settings__tab" data-tab="auth"><?= GetMessage('ST_SETTINGS_TAB_2') ?></div>
-<!--            <div class="settings__tab" data-tab="banner">--><?//= GetMessage('ST_SETTINGS_TAB_3') ?><!--</div>-->
-<!--            <div class="settings__tab" data-tab="actions">--><?//= GetMessage('ST_SETTINGS_TAB_4') ?><!--</div>-->
+            <div class="settings__tab" data-tab="banner"><?=GetMessage('ST_SETTINGS_TAB_3') ?></div>
+            <div class="settings__tab" data-tab="actions"><?= GetMessage('ST_SETTINGS_TAB_4') ?></div>
+            <div class="settings__tab" data-tab="pagetovar"><?= GetMessage('ST_SETTINGS_TAB_8') ?></div>
             <div class="settings__tab" data-tab="contacts"><?= GetMessage('ST_SETTINGS_TAB_5') ?></div>
             <div class="settings__tab" data-tab="footer"><?= GetMessage('ST_SETTINGS_TAB_6') ?></div>
             <div class="settings__tab" data-tab="analytics"><?= GetMessage('ST_SETTINGS_TAB_7') ?></div>
@@ -48,14 +49,18 @@ $PROP = $arResult['SETTINGS']['PROP'];
                     <h1><?= GetMessage('ST_SETTINGS_TAB_2') ?></h1>
                     <? include 'tabs/auth.php' ?>
                 </div>
-<!--                <div class="settings__tab-content" data-tab="banner">-->
-<!--                    <h1>--><?//= GetMessage('ST_SETTINGS_TAB_3') ?><!--</h1>-->
-<!--                    --><?// include 'tabs/banner.php' ?>
-<!--                </div>-->
-<!--                <div class="settings__tab-content" data-tab="actions">-->
-<!--                    <h1>--><?//= GetMessage('ST_SETTINGS_TAB_4') ?><!--</h1>-->
-<!--                    --><?// include 'tabs/actions.php' ?>
-<!--                </div>-->
+                                <div class="settings__tab-content" data-tab="banner">
+                                    <h1><?= GetMessage('ST_SETTINGS_TAB_3') ?></h1>
+                                    <?  include 'tabs/banner.php' ?>
+                                </div>
+                <div class="settings__tab-content" data-tab="actions">
+                    <h1><?= GetMessage('ST_SETTINGS_TAB_4') ?></h1>
+                    <? include 'tabs/actions.php' ?>
+                </div>
+                <div class="settings__tab-content" data-tab="pagetovar">
+                    <h1><?= GetMessage('ST_SETTINGS_TAB_8') ?></h1>
+                    <? include 'tabs/pagetovar.php' ?>
+                </div>
                 <div class="settings__tab-content" data-tab="contacts">
                     <h1><?= GetMessage('ST_SETTINGS_TAB_5') ?></h1>
                     <? include 'tabs/contacts.php' ?>
@@ -89,6 +94,59 @@ $PROP = $arResult['SETTINGS']['PROP'];
             ST_SETTINGS_SELECT: '<?=GetMessage('ST_SETTINGS_SELECT')?>',
         })
     </script>
+    <style>
+        .board-info__social-link_Telegram {
+            background-image: url(<?=$templateFolder?>/img/tg.svg);
+            width: 27px;
+            height: 27px
+        }
+
+        .board-info__social-link_Whatsapp {
+            background-image: url(<?=$templateFolder?>/img/whatsapp.svg);
+            width: 27px;
+            height: 27px
+        }
+
+        .board-info__social-link_Viber {
+            background-image: url(<?=$templateFolder?>/img/viber.svg);
+            width:27px; height:27px
+        }
+
+        .board-info__social-link_Vkontakte {
+            background-image: url(<?=$templateFolder?>/img/vk.svg);
+            width:27px; height:27px
+        }
+
+        .board-info__social-link_Facebook {
+            background-image: url(<?=$templateFolder?>/img/fb.svg);
+            width:27px; height:27px
+        }
+
+        .board-info__social-link_Instagram {
+            background-image: url(<?=$templateFolder?>/img/inst.svg);
+            width:27px; height:27px
+        }
+
+        .board-info__social-link_Youtube {
+            background-image: url(<?=$templateFolder?>/img/yt.svg);
+            width:27px; height:27px
+        }
+
+        .board-info__social-link_AppStore {
+            background-image: url(<?=$templateFolder?>/img/apstore.svg);
+            width:132px; height:40px
+        }
+
+        .board-info__social-link_GooglePlay {
+            background-image: url(<?=$templateFolder?>/img/gp.svg);
+            width:132px; height:40px
+        }
+
+        .board-info__social-link_AppGallery {
+            background-image: url(<?=$templateFolder?>/img/appgallery.svg);
+            width:132px; height:40px
+        }
+    </style>
 </div>
 
 

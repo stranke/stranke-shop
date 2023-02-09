@@ -216,8 +216,12 @@ $componentElementParams = array(
     ?>
 
 </div>
+
+
+
+<div class="wrapper">
 <?
-/*$GLOBALS['FILTER_RELATED_PRODUCTS'] = [];
+$GLOBALS['FILTER_RELATED_PRODUCTS'] = [];
 $dbPropValues = CIBlockElement::GetProperty($arParams['IBLOCK_ID'], $elementId, [], ['CODE' => 'RELATED_PRODUCTS']);
 while ($arPropValue = $dbPropValues->Fetch()) {
     if (empty($arPropValue['VALUE'])) continue;
@@ -227,7 +231,7 @@ while ($arPropValue = $dbPropValues->Fetch()) {
 <? if (!empty($GLOBALS['FILTER_RELATED_PRODUCTS']['ID'])): ?>
     <? $APPLICATION->IncludeComponent(
         "bitrix:catalog.section",
-        "element_related-products",
+        "element_recomend-products",
         array(
             "IBLOCK_TYPE" => "catalog",
             "IBLOCK_ID" => $arParams['IBLOCK_ID'],
@@ -369,4 +373,5 @@ while ($arPropValue = $dbPropValues->Fetch()) {
         ),
         false
     ); ?>
-<? endif */ ?>
+</div>
+<? endif  ?>

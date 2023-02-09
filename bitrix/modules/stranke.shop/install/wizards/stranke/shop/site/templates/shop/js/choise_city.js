@@ -109,7 +109,7 @@ $(document).on("click", '.js-choisecity', function (ev) {
 $(document).on('ready', function () {
     setChoiseCityBox();
 });
-/*$.ajax({
+$.ajax({
     "type": "post",
     "url": '/ajax/choise_city_load.php',
     success: function (data) {
@@ -120,4 +120,4 @@ $(document).on('ready', function () {
             });
         }, 1500)
     }
-});*/
+});
